@@ -1,0 +1,10 @@
+﻿@model IEnumerable<ShopOnline.Models.LienHe>
+
+@foreach (var item in Model)
+{
+    <div class="text">
+        <p class="phone-box"><strong>Hỗ trợ:@item.Sodienthoai</strong><a href="tel:@item.Sodienthoai"> <span></span></a></p>
+        <p class="email-box">Email:<a href="mailto:@item.Email" style="text-transform: none;"> <span>@item.Email</span></a></p>
+    </div>
+}
+

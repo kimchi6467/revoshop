@@ -1,0 +1,6 @@
+﻿@model IEnumerable<ShopOnline.Models.TinTuc>
+
+@foreach (var item in Model)
+{
+    <li><a href="/@ViewBag.meta/@item.meta/@item.MaTinTuc" title="@item.TenTinTuc">@item.TenTinTuc</a></li>
+}

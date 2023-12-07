@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<<div class="breadcrumbs">
+    <div class="container">
+        <div class="inner">
+            <ul itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <li class="home"> <a itemprop="url" title="Quay lại trang chủ" href="/"><span itemprop="title">Trang chủ</span></a><i class="fa fa-angle-double-right" aria-hidden="true"></i></li>
+
+                <li><span itemprop="title">Liên Hệ</span></li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="clearfix page-description">
+
+    <p id="map_canvas" class="text-center">
+        <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.310729061687!2d106.65395731482269!3d10.787496261939006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ecbb6275cc3%3A0x634b1cfb9f2ed0be!2zNTYgVsOibiBDw7RpLCBwaMaw4budbmcgNywgVMOibiBCw6xuaCwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1468916218739' width='1200' height='600' frameborder='0' style='border:0' allowfullscreen></iframe>
+    </p>
+
+</div>
+<div class="main-container col2-right-layout">
+    <div class="main container">
+        <div class="row">
+            <div class="contact-content">
+                <div class="col-main col-md-4 col-sm-12 ">
+                    <div class="page-title">
+                        <h1 class="cat-heading">Liên hệ </h1>
+                        @Html.Action("QuanLyTrangLienHe", "ControlPanel")
+                    </div>
+                    <div class="inner-contact">
+                        <div class="">
+                            <div class="social pull-left hidden-xs">
+
+                                <ul class="link">
+
+                                    <li class="fb pull-left"><a href="#"></a></li>
+
+
+                                    <li class="tw pull-left"><a href="#"></a></li>
+
+
+                                    <li class="googleplus pull-left"><a href="#"></a></li>
+
+
+                                    <li class="rss pull-left"><a href="#"></a></li>
+
+
+                                    <li class="youtube pull-left"><a href="#"></a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="col-main col-md-8 col-sm-12 main-contact">
+                    <div class="page-title">
+                        <h2>GỬI Ý KIẾN CỦA BẠN</h2>
+                    </div>
+                    <div class="static-contain">
+                        @using (Html.BeginForm())
+
+                        {
+
+                            @Html.ValidationSummary(true)
+                            <form accept-charset="UTF-8" action="/contact" id="contact" method="post">
+                                <input name="FormType" type="hidden" value="contact">
+                                <input name="utf8" type="hidden" value="true">
+
+
+                                <fieldset>
+                                    <input name="form_type" type="hidden" value="contact"><input name="utf8" type="hidden" value="?">
+
+                                    <div class="customer-name">
+
+                                        <div class="form-group">
+                                            <input type="text" size="35" class="input-text" value="" name="HoTen" placeholder="Họ và tên">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" size="35" id="email" value="" class="input-text" name="Email" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="subject" size="35" id="subject" value="" class="input-text" name="TieuDe" placeholder="Tiêu đề">
+                                        </div>
+                                    </div>
+                                    <div style="float:none" class="box-nd">
+                                        <textarea id="comment" title="Nội dung" name="NoiDung" class="form-control" rows="5" placeholder="Nội dung"></textarea>
+                                    </div>
+                                </fieldset>
+                                <div class="buttons-set">
+                                    <button type="submit" title="Submit" class="button submit"> <span> Gửi </span> </button>
+                                </div>
+                            </form>
+                        }
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+

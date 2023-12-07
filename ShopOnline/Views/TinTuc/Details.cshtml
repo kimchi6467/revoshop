@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="inner">
+            <ul itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <li class="home"> <a itemprop="url" title="Quay lại trang chủ" href="/"><span itemprop="title">Trang chủ</span></a><i class="fa fa-angle-double-right" aria-hidden="true"></i></li>
+
+                <li><a itemprop="url" href="/tin-tuc/bai-viet-moi"><span itemprop="title">Tin tức</span></a><i class="fa fa-angle-double-right" aria-hidden="true"></i></li>
+                <li>@Model.TenTinTuc</li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<section class="main-container col2-right-layout">
+    <div class="main container">
+        <div class="row">
+            <aside class="col-right sidebar col-sm-3 wow bounceInRight animated hidden-xs hidden-sm animated" style="visibility: visible;">
+                <div class="danh-muc-blog">
+                    <div class="color-blog">
+                        <h2 class="title-blog">Danh Mục Bài Viết</h2>
+                    </div>
+                    <div class="index-column-blog row-service">
+
+                        <ul class="links">
+
+                            @Html.Action("danhmuctintuc", "Home")
+
+                        </ul>
+                    </div>
+                </div>
+                <div role="complementary" class="widget_wrapper13" id="secondary">
+
+                    <div class="popular-posts widget widget__sidebar" id="recent-posts-4">
+
+                        <!-- Banner Ad Block -->
+
+
+                    </div>
+                </div>
+            </aside>
+            <div class="col-main col-sm-12 col-md-9">
+                <!--<div class="page-title">
+                <h2>Tin Tức</h2>
+                </div>-->
+                <div class="blog-wrapper" id="main">
+                    <div class="site-content" id="primary" itemscope="" itemtype="http://schema.org/Article">
+
+                        <div role="main" id="content">
+                            <article class="blog_entry clearfix wow bounceInLeft animated animated" style="visibility: visible;">
+                                <header class="blog_entry-header clearfix">
+                                    <div class="blog_entry-header-inner">
+                                        <h1 class="blog_entry-title blog_entry-title-art">@Model.TenTinTuc</h1>
+                                    </div>
+                                    <div class="entry-author"><i class="fa fa-user" aria-hidden="true" style="margin-right:2px"></i></div>
+                                    <span style="margin:0 3px">|</span>
+                                    <time datetime="@Model.NgayCapNhat" class="entry-date">@Model.NgayCapNhat</time>
+                                    <span style="margin:0 3px">|</span><a rel="category tag" title="Tin tức" href="/tin-tuc">Tin tức</a>
+                                    <!--blog_entry-header-inner-->
+                                    <div class="entry-content" style="margin-top: 20px;">
+                                        @Html.Raw(Model.NoiDungChiTiet)
+                                        <p>&nbsp;</p>
+                                        <div class="social-product">
+                                            <label>Chia sẻ</label>
+                                            <div class="social pull-left">
+
+
+                                                <ul class="link">
+                                                    <li class="fb pull-left">
+                                                        <a class="btn social-sharing btn-facebook" href="javascript:void&#8202;;" data-type="facebook"><img src="//bizweb.dktcdn.net/100/154/087/themes/612450/assets/facebook-logo-button.png?1523892565529" atl=""></a>
+                                                    </li>
+                                                    <li class="tw pull-left">
+                                                        <a class="btn social-sharing btn-twitter" href="javascript:void&#8202;;" data-type="twitter"><img src="//bizweb.dktcdn.net/100/154/087/themes/612450/assets/twitter-logo-button.png?1523892565529" atl=""></a>
+                                                    </li>
+                                                    <li class="googleplus pull-left">
+                                                        <a class="btn social-sharing btn-google-plus" href="javascript:void&#8202;;" data-type="google-plus"><img src="//bizweb.dktcdn.net/100/154/087/themes/612450/assets/google-plus-logo-button.png?1523892565529" atl=""></a>
+                                                    </li>
+                                                    <li class="rss pull-left">
+                                                        <a class="btn social-sharing btn-pinterest" href="javascript:void&#8202;;" data-type="pinterest"><img src="//bizweb.dktcdn.net/100/154/087/themes/612450/assets/rss.png?1523892565529" atl=""></a>
+                                                    </li>
+                                                </ul>
+                                                <script type="text/javascript">
+                                                    $(document).ready(function () {
+                                                        $('.btn.social-sharing').on('click', function () {
+                                                            type = $(this).attr('data-type');
+                                                            if (type.length) {
+                                                                switch (type) {
+                                                                    case 'facebook':
+                                                                        window.open('http://www.facebook.com/sharer/sharer.php?u=http://localhost:15870', 'sharer', 'toolbar=0,status=0,width=660,height=445');
+                                                                        break;
+                                                                    case 'twitter':
+                                                                        window.open('https://twitter.com/intent/tweet?text= http://localhost:15870', 'sharertwt', 'toolbar=0,status=0,width=640,height=445');
+                                                                        break;
+                                                                    case 'google-plus':
+                                                                        window.open('https://plus.google.com/share?url=//localhost:15870', 'sharer', 'toolbar=0,status=0,width=660,height=445');
+                                                                        break;
+                                                                    case 'pinterest':
+                                                                        window.open('http://pinterest.com/pin/create/button/?url=//localhost:15870', 'sharerpinterest', 'toolbar=0,status=0,width=660,height=445');
+                                                                        break;
+                                                                }
+                                                            }
+                                                        });
+                                                    });
+                                                </script>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </header>
+                                
+                            </article>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+

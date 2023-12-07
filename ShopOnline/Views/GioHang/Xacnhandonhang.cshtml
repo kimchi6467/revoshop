@@ -1,0 +1,265 @@
+﻿@using ShopOnline.Models
+@model List<Giohang>
+@{
+    Layout= null;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style type="text/css">
+        .gm-style .gm-style-mtc label, .gm-style .gm-style-mtc div {
+            font-weight: 400;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <style type="text/css">
+        .gm-style .gm-style-cc span, .gm-style .gm-style-cc a, .gm-style .gm-style-mtc div {
+            font-size: 10px;
+        }
+    </style>
+    <style type="text/css">
+        .gm-style-pbc {
+            transition: opacity ease-in-out;
+            background-color: rgba(0,0,0,0.45);
+            text-align: center;
+        }
+
+        .gm-style-pbt {
+            font-size: 22px;
+            color: white;
+            font-family: Roboto,Arial,sans-serif;
+            position: relative;
+            margin: 0;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shop name - Thanh toán đơn hàng">
+
+    <title>Revo - Cảm ơn</title>
+ <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/thankyou.css" rel="stylesheet" />
+
+    <link href="~/Content/checkout.css" rel="stylesheet" />
+
+</head>
+
+<body class="body--custom-background-color ">
+
+    <div context="checkout" define="{checkout: new Bizweb.StoreCheckout(this,{})}" class="container">
+        <div class="header">
+            <div class="wrap">
+                <div class="shop logo logo--left ">
+
+                    <h1 class="shop__name">
+                        <a href="/">
+                            Revo
+                        </a>
+                    </h1>
+
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="wrap clearfix">
+                <div class="row thankyou-infos">
+                    <div class="col-md-7 thankyou-message">
+                        <div class="thankyou-message-icon unprint">
+                            <div class="icon icon--order-success svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="72px" height="72px">
+                                    <g fill="none" stroke="#8EC343" stroke-width="2">
+                                        <circle cx="36" cy="36" r="35" style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;"></circle>
+                                        <path d="M17.417,37.778l9.93,9.909l25.444-25.393" style="stroke-dasharray:50px, 50px; stroke-dashoffset: 0px;"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="thankyou-message-text">
+                            <h3>Cảm ơn bạn đã đặt hàng</h3>
+                            <p>
+
+
+                            </p>
+                            <div style="font-style: italic;">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="col-md-7 col-sm-12 customer-info">
+
+                        
+
+                        <div class="shipping-info">
+@using (Html.BeginForm())
+                    {   
+                            <div class="row">
+
+                                <div class="col-md-6 col-sm-6">
+                                    @{
+                        KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];
+                                    }
+                                    <div class="order-summary order-summary--white no-border no-padding-top">
+                                        <div class="order-summary-header">
+                                            <h2>
+                                                <label class="control-label">Thông tin nhận hàng</label>
+                                            </h2>
+                                        </div>
+                                        <div class="summary-section no-border no-padding-top">
+                                            <p class="address-name">
+                                                Họ và tên
+                                            </p>
+                                            <p class="address-address">
+                                              Địa chỉ khách hàng
+                                            </p>
+
+
+                                            <p class="address-province">
+                                               Điện thoại
+                                            </p>
+                                            <p class="address-province">
+                                                Hình thức thanh toán
+                                            </p>
+
+
+                                            
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6">
+
+                                    <div class="order-summary order-summary--white no-border">
+                                        <div class="order-summary-header">
+                                            <br />
+                                        </div>
+                                        <div class="summary-section no-border no-padding-top">
+                                            <p class="address-name">
+                                                @kh.HoTen
+                                            </p>
+                                            <p class="address-address">
+                                                @kh.DiachiKH
+                                            </p>
+
+
+                                            <p class="address-province">
+                                                @kh.DienthoaiKH
+                                            </p>
+
+
+
+                                            <p class="address-phone">
+                                               Chuyển khoản
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+}
+                            <div class="row">
+                                
+
+                            </div>
+                        </div>
+                        <div class="order-success unprint">
+                            <a href="/" class="btn btn-primary">
+                                Tiếp tục mua hàng
+                            </a>
+                            <a onclick="window.print()" class="nounderline print-link" href="javascript:void(0)">
+                                <div class="print-link__block clearfix">
+                                    <i class="fa fa-print icon-print" aria-hidden="true"></i>
+                                    In
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <style>
+        #map {
+            width: 100%;
+            height: 245px;
+        }
+
+        .hidden-map {
+            display: none;
+        }
+    </style>
+
+    <script src="//bizweb.dktcdn.net/assets/themes_support/jquery-2.1.3.min.js?20171025" type="text/javascript"></script>
+    <script src="//bizweb.dktcdn.net/assets/themes_support/bootstrap.min.js?20171025" type="text/javascript"></script>
+    <script src="//bizweb.dktcdn.net/assets/themes_support/twine.min.js?20171025" type="text/javascript"></script>
+    <script src="//bizweb.dktcdn.net/assets/themes_support/checkout.js?20180327" type="text/javascript"></script>
+    <!--<script src="https://bizweb.dktcdn.net/100/000/001/themes/544642/assets/checkout.js?15168730444422222" type='text/javascript'></script>-->
+    <script src="//bizweb.dktcdn.net/assets/themes_support/thankyou.js?20171025" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        context = {}
+
+        $(function () {
+            Twine.reset(context).bind().refresh();
+        });
+
+        window.Bizweb || (window.Bizweb = {});
+        Bizweb.Checkout = function () {
+            function Checkout(e, options) {
+                if (!options)
+                    options = {};
+
+                this.ele = e;
+                this.invalidEmail = false;
+            };
+
+            Checkout.prototype.handleClick = function (element) {
+                $(element).closest(".field__input-wrapper").find(".field__input").focus();
+            }
+
+            Checkout.prototype.handleFocus = function (element) {
+                $(element).closest(".field__input-wrapper").addClass("js-is-focused")
+            }
+
+            Checkout.prototype.handleFieldBlur = function (element) {
+                $(element).closest(".field__input-wrapper").removeClass("js-is-focused")
+            }
+
+            Checkout.prototype.changeEmail = function () {
+            }
+
+            return Checkout;
+        }();
+    </script>
+
+
+    <!-- Google Tag Manager -->
+    <noscript>
+        &lt;iframe src='//www.googletagmanager.com/ns.html?id=GTM-MS77Z9' height='0' width='0' style='display:none;visibility:hidden'&gt;&lt;/iframe&gt;
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MS77Z9');
+    </script>
+    <!-- End Google Tag Manager -->
+
+</body>
+</html>

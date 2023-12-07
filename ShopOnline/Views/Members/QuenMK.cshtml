@@ -1,0 +1,69 @@
+﻿@model ShopOnline.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "QuenMK";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="main-container col1-layout">
+    <div class="main container">
+        <div class="account-login">
+            <div class="page-title">
+                <h2 style="text-align:center">Quên Mật Khẩu</h2>
+            </div>
+
+                <div class="col-1 registered-users">
+                    <div class="content">
+                        @using (Html.BeginForm())
+
+                        {
+
+                            @Html.ValidationSummary(true)
+   
+                             
+                               
+
+                                <ul class="form-list">
+                                    <li>
+                                        <div class="customer-name">
+                                    <li>
+                                        <label for="email">Tên đăng nhập<span class="required">*</span></label>
+                                        <br>
+                                        <input type="text" class="input-text" name="txtTaiKhoan" placeholder="Tên đăng nhập">
+                                    </li>
+
+                                    <div class="input-box name-ussername">
+                                        <label for="pass">Mật khẩu<span class="required">*</span></label>
+                                        <br>
+                                        <input type="password" class="input-text" name="Matkhau" placeholder="Nhập mật khẩu" required>
+
+                                    </div>
+
+
+                                    <div class="input-box name-ussername">
+                                        <label for="pass">Nhập lại mật khẩu<span class="required">*</span></label>
+                                        <br>
+                                        <input type="password" class="input-text" name="Matkhau" placeholder="Nhập mật khẩu" required>
+
+                                    </div>
+</div>
+
+
+
+                                    </li>
+
+                                </ul>
+                                <p class="required">* Bắt buộc</p>
+                                <div class="buttons-set">
+                                    <button id="send2" type="submit" class="button login" style="margin-right: 5px;"><span>Thay đổi mật khẩu</span></button>
+                                    <p style="line-height: 40px; margin-left: 5px; float: left;">hoặc <a href="/Members/Dangnhap">Đăng nhập</a></p>
+                                </div>
+ 
+                        }
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</section>

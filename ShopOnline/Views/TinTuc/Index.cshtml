@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="main-container col2-right-layout">
+    <div class="main container">
+        <div class="row">
+            <aside class="col-right sidebar col-sm-3 wow bounceInRight animated hidden-xs hidden-sm animated" style="visibility: visible;">
+                <div class="danh-muc-blog">
+                    <div class="color-blog">
+                        <h2 class="title-blog">Danh Mục Bài Viết</h2>
+                    </div>
+                    <div class="index-column-blog row-service">
+
+                        <ul class="links">
+
+                           @Html.Action("Baivietmoi","Home")
+
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <div role="complementary" class="widget_wrapper13" id="secondary">
+
+                    <div class="popular-posts widget widget__sidebar" id="recent-posts-4">
+
+                        <!-- Banner Ad Block -->
+
+
+                    </div>
+                </div>
+            </aside>
+            <div class="col-sm-12 col-md-9">
+                <div class="blog-title">
+                    <h1 class="cat-heading blog_">Tin tức</h1>
+                </div>
+                <div class="blog-wrapper" id="main">
+                    <div class="site-content" id="primary">
+                        <div role="main" id="content">
+                            <div class="row masonry-container" style="position: relative; height: 1245px;">
+                                @Html.Action("Tintuctheochude", "Home", new { id = Model.MaTheLoai, metatitle = @Model.meta })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pager">
+                    <div class="pages">
+                        <label>Trang:</label>
+                        <ul class="pagination">
+
+
+
+
+                            <li class="active"><a href="#" style="pointer-events:none">1</a></li>
+
+
+
+
+                            <li><a href="/tin-tuc?page=2">2</a></li>
+
+
+
+                            <li><a href="/tin-tuc?page=2" title="2">»</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+

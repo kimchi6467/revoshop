@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ShopOnline.Models.QuanLyTrangLienHe>
+
+@foreach(var item in Model)
+{
+     <div class="text-lien-he">@Html.Raw(@item.GioiThieu)</div>
+                        <div class="form-contact">
+                            <div class="lien-he"><img src="~/Hinhsanpham/iconnha.png" >@item.DiaChi</div>
+                            <div class="lien-he"><img src="~/Hinhsanpham/iconemail.png" ><a href="mailto:@item.Email">@item.Email</a></div>
+                            <div class="lien-he"><img src="~/Hinhsanpham/inconphone.png"><a href="callto:@item.SodienThoai">@item.SodienThoai</a></div>
+                        </div>
+}
+

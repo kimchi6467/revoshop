@@ -1,0 +1,117 @@
+﻿@using ShopOnline.Models
+@model List<Giohang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="main-container col1-layout">
+    <div class="main container">
+        <div class="col-main">
+            <div class="cart">
+                <div class="page-title">
+                    <h1 class="cat-heading blog_">Giỏ hàng</h1>
+                </div>
+
+             
+                    <form action="/cart" method="post" novalidate="">
+           
+                        <div class="table-responsive">
+                      
+                            <fieldset>
+                                <table class="data-table cart-table" id="shopping-cart-table">
+                                    <thead>
+                                    <tr class="first last">
+                                        <th rowspan="1">&nbsp;</th>
+                                        <th rowspan="1"><span class="nobr">Tên sản phẩm</span></th>
+                                     
+                                        <th colspan="1" class="a-center"><span class="nobr">Giá bán lẻ</span></th>
+                                        <th class="a-center" rowspan="1">Số lượng</th>
+                                        <th colspan="1" class="a-center">Tạm tính</th>
+
+                                        <th rowspan="1">&nbsp;</th>
+                                    </tr>
+                                    </thead>
+                                                                    @foreach (var item in Model)
+                                    {
+                                        <tbody>
+
+
+                                        <tr>
+
+                                            <td class="image"><a class="product-image" title="kho hàng" href="/kho-hang"><img alt="kho hàng" src="~/Hinhsanpham/@item.sHinhAnh"></a></td>
+                                            <td>
+                                                <h2 class="product-name"> <a href="/kho-hang"></a>@item.sTenSANPHAM</h2>
+                                            </td>
+                                            
+                                            <td class="a-right">
+                                                <span class="cart-price"> <span class="price">@String.Format("{0:0,0}", item.dDongia)</span> </span>
+                                            </td>
+                                            <td>
+
+
+                                                <div class="pull-left qty-number">
+                                                    <div class="custom pull-left">
+                                                        <button onclick="var result = document.getElementById('updates_6081967');var qty = result.value;if (!isNaN(qty) & amp;&amp;qty > 1 )result.value--;return false;" class="reduced items-count" type="button"><i class="fa fa-minus">&nbsp;</i></button>
+                                                        <input type="text" class="input-text qty pull-left" title="Qty" value="@item.iSoluong" min="1" maxlength="12" id="updates_6081967" name="Lines">
+                                                        <button onclick="var result = document.getElementById('updates_6081967');var qty = result.value;if (!isNaN(qty)) result.value++;return false;" class="increase items-count" type="button"><i class="fa fa-plus">&nbsp;</i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="cart-price"> <span class="price">@String.Format("{0:0,0}", item.dThanhtien)</span> </span>
+                                            </td>
+
+                                            <td>
+
+                                                <a class="button remove-item" href="/GioHang/XoaGiohang?iMaSp=@item.iMaSANPHAM"><span><span></span></span></a>
+                                            </td>
+                                        </tr>
+                                    
+                                    </tbody>
+                                }
+                           
+                                
+                                    <tfoot>
+                                    <tr class="first last">
+                                        <td class="a-right last" colspan="7">
+                                            <button class="button btn-continue" title="Tiếp tục mua hàng" type="button" onclick="window.location.href = '/'"><span><span>Tiếp tục mua hàng</span></span></button>
+                                        </td>
+                                    </tr>
+                                    </tfoot>
+                                
+                             
+                                </table>
+                            </fieldset>
+                        
+                        </div>
+                
+                    </form>
+               
+                <div class="cart-collaterals row">
+
+                    <div class="totals col-sm-4 col-md-offset-8">
+                        <h3>Tổng cộng:@String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ</h3>
+                        <div class="inner " style="padding:0; margin:0">
+                            <table class="table shopping-cart-table-total" id="shopping-cart-totals-table">
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                
+                            </table>
+                            <ul class="checkout">
+                                <li>
+                                   
+                                    <button class="button btn-proceed-checkout" title="Tiến hành thanh toán" type="button" onclick="window.location.href = '/GioHang/Dathang'"><span>Tiến hành thanh toán</span></button>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--inner-->
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

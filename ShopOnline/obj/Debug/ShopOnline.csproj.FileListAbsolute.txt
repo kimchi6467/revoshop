@@ -1,0 +1,190 @@
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\ShopOnline.dll.config
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\ShopOnline.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\ShopOnline.pdb
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\Antlr3.Runtime.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\Microsoft.Web.Infrastructure.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\Newtonsoft.Json.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.Helpers.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.Mvc.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.Optimization.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.Razor.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.WebPages.Deployment.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.WebPages.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.WebPages.Razor.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\WebGrease.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.Helpers.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.Mvc.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.Optimization.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.Razor.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.WebPages.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.WebPages.Deployment.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\System.Web.WebPages.Razor.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\Newtonsoft.Json.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\bin\Antlr3.Runtime.pdb
+D:\doanmonhoc\ShopOnline\ShopOnline\obj\Debug\ShopOnline.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\obj\Debug\ShopOnline.pdb
+D:\doanmonhoc\ShopOnline\ShopOnline\obj\Debug\ShopOnline.csprojResolveAssemblyReference.cache
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\ShopOnline.dll.config
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\ShopOnline.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\ShopOnline.pdb
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\Antlr3.Runtime.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\Microsoft.Web.Infrastructure.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\Newtonsoft.Json.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Helpers.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Mvc.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Optimization.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Razor.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.Deployment.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.Razor.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\WebGrease.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Helpers.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Mvc.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Optimization.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Razor.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.Deployment.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.Razor.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\Newtonsoft.Json.xml
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\bin\Antlr3.Runtime.pdb
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\obj\Debug\ShopOnline.dll
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\obj\Debug\ShopOnline.pdb
+D:\doanmonhoc\ShopOnline\ShopOnline\ShopOnline\obj\Debug\ShopOnline.csprojResolveAssemblyReference.cache
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\ShopOnline.dll.config
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\ShopOnline.dll
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\ShopOnline.pdb
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\Antlr3.Runtime.dll
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\Microsoft.Web.Infrastructure.dll
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\Newtonsoft.Json.dll
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Helpers.dll
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Mvc.dll
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Optimization.dll
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Razor.dll
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.Deployment.dll
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.dll
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.Razor.dll
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\WebGrease.dll
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Helpers.xml
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Mvc.xml
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Optimization.xml
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Razor.xml
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.xml
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.Deployment.xml
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.Razor.xml
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\Newtonsoft.Json.xml
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\bin\Antlr3.Runtime.pdb
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\obj\Debug\ShopOnline.csprojResolveAssemblyReference.cache
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\obj\Debug\ShopOnline.dll
+D:\doanmonhoc\ShopOnline new 4-3\ShopOnline\ShopOnline\ShopOnline\obj\Debug\ShopOnline.pdb
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\obj\Debug\ShopOnline.csprojResolveAssemblyReference.cache
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\ShopOnline.dll.config
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\ShopOnline.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\ShopOnline.pdb
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\Antlr3.Runtime.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\EntityFramework.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\EntityFramework.SqlServer.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\Newtonsoft.Json.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\PagedList.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\PagedList.Mvc.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Helpers.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Mvc.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Optimization.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Razor.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.Deployment.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.Razor.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\WebGrease.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\EntityFramework.xml
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\EntityFramework.SqlServer.xml
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\PagedList.xml
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\PagedList.Mvc.xml
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Helpers.xml
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Mvc.xml
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Optimization.xml
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.Razor.xml
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.xml
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.Deployment.xml
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\System.Web.WebPages.Razor.xml
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\Newtonsoft.Json.xml
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\Antlr3.Runtime.pdb
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\obj\Debug\ShopOnline.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\obj\Debug\ShopOnline.pdb
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\CKFinder.dll
+C:\Users\hieutran\Desktop\ShopOnline\ShopOnline\ShopOnline\bin\CKFinder.pdb
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\ShopOnline.dll.config
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\ShopOnline.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\ShopOnline.pdb
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\Antlr3.Runtime.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\CKFinder.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\EntityFramework.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\EntityFramework.SqlServer.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\Newtonsoft.Json.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\PagedList.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\PagedList.Mvc.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.Helpers.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.Mvc.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.Optimization.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.Razor.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.WebPages.Deployment.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.WebPages.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.WebPages.Razor.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\WebGrease.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\CKFinder.pdb
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\EntityFramework.xml
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\EntityFramework.SqlServer.xml
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\PagedList.xml
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\PagedList.Mvc.xml
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.Helpers.xml
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.Mvc.xml
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.Optimization.xml
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.Razor.xml
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.WebPages.xml
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.WebPages.Deployment.xml
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\System.Web.WebPages.Razor.xml
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\Newtonsoft.Json.xml
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\bin\Antlr3.Runtime.pdb
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\obj\Debug\ShopOnline.csprojAssemblyReference.cache
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\obj\Debug\ShopOnline.csproj.CoreCompileInputs.cache
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\obj\Debug\ShopOnline.csproj.CopyComplete
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\obj\Debug\ShopOnline.dll
+C:\Users\LaptopNCT.com\Desktop\1511060186_Đỗ Việt Đức_Webbangiay.rar\Source\Doan\ShopOnline\obj\Debug\ShopOnline.pdb
+D:\Do An\Doan\ShopOnline\bin\ShopOnline.dll.config
+D:\Do An\Doan\ShopOnline\bin\ShopOnline.dll
+D:\Do An\Doan\ShopOnline\bin\ShopOnline.pdb
+D:\Do An\Doan\ShopOnline\bin\Antlr3.Runtime.dll
+D:\Do An\Doan\ShopOnline\bin\CKFinder.dll
+D:\Do An\Doan\ShopOnline\bin\EntityFramework.dll
+D:\Do An\Doan\ShopOnline\bin\EntityFramework.SqlServer.dll
+D:\Do An\Doan\ShopOnline\bin\Microsoft.Web.Infrastructure.dll
+D:\Do An\Doan\ShopOnline\bin\Newtonsoft.Json.dll
+D:\Do An\Doan\ShopOnline\bin\PagedList.dll
+D:\Do An\Doan\ShopOnline\bin\PagedList.Mvc.dll
+D:\Do An\Doan\ShopOnline\bin\System.Web.Helpers.dll
+D:\Do An\Doan\ShopOnline\bin\System.Web.Mvc.dll
+D:\Do An\Doan\ShopOnline\bin\System.Web.Optimization.dll
+D:\Do An\Doan\ShopOnline\bin\System.Web.Razor.dll
+D:\Do An\Doan\ShopOnline\bin\System.Web.WebPages.Deployment.dll
+D:\Do An\Doan\ShopOnline\bin\System.Web.WebPages.dll
+D:\Do An\Doan\ShopOnline\bin\System.Web.WebPages.Razor.dll
+D:\Do An\Doan\ShopOnline\bin\WebGrease.dll
+D:\Do An\Doan\ShopOnline\bin\CKFinder.pdb
+D:\Do An\Doan\ShopOnline\bin\EntityFramework.xml
+D:\Do An\Doan\ShopOnline\bin\EntityFramework.SqlServer.xml
+D:\Do An\Doan\ShopOnline\bin\PagedList.xml
+D:\Do An\Doan\ShopOnline\bin\PagedList.Mvc.xml
+D:\Do An\Doan\ShopOnline\bin\System.Web.Helpers.xml
+D:\Do An\Doan\ShopOnline\bin\System.Web.Mvc.xml
+D:\Do An\Doan\ShopOnline\bin\System.Web.Optimization.xml
+D:\Do An\Doan\ShopOnline\bin\System.Web.Razor.xml
+D:\Do An\Doan\ShopOnline\bin\System.Web.WebPages.xml
+D:\Do An\Doan\ShopOnline\bin\System.Web.WebPages.Deployment.xml
+D:\Do An\Doan\ShopOnline\bin\System.Web.WebPages.Razor.xml
+D:\Do An\Doan\ShopOnline\bin\Newtonsoft.Json.xml
+D:\Do An\Doan\ShopOnline\bin\Antlr3.Runtime.pdb
+D:\Do An\Doan\ShopOnline\obj\Debug\ShopOnline.csprojAssemblyReference.cache
+D:\Do An\Doan\ShopOnline\obj\Debug\ShopOnline.csproj.CoreCompileInputs.cache
+D:\Do An\Doan\ShopOnline\obj\Debug\ShopOnline.csproj.CopyComplete
+D:\Do An\Doan\ShopOnline\obj\Debug\ShopOnline.dll
+D:\Do An\Doan\ShopOnline\obj\Debug\ShopOnline.pdb

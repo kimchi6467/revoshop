@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ShopOnline.Models.TinTuc>
+
+@foreach(var item in Model)
+{
+    <div class="col-xs-12 col-sm-4">
+                <article class="blog_entry clearfix wow bounceInLeft animated">
+                    <div class="entry-content">
+                        <div class="featured-thumb">
+                            <a href="/@ViewBag.meta/@item.meta/@item.MaTinTuc"><img src="~/Hinhsanpham/@item.HinhANh" alt="@item.TenTinTuc"></a>
+                        </div>
+                        <header class="blog_entry-header clearfix">
+                            <div class="blog_entry-header-inner">
+                                <h3 class="blog_entry-title"> <a rel="bookmark" href="/@ViewBag.meta/@item.meta/@item.MaTinTuc">@item.TenTinTuc</a> </h3>
+                            </div>
+                            <!--blog_entry-header-inner-->
+                        </header>
+                
+                        <div class="post-date"><i class="fa fa-clock-o" aria-hidden="true"></i> 07/12/2016 <i class="fa fa-comments-o" aria-hidden="true"></i></div>
+                    </div>
+                    <a href="/@ViewBag.meta/@item.meta/@item.MaTinTuc" class="link-article"><i class="fa fa-caret-right" style="margin-right: 3px;"></i>Đọc Tiếp</a>
+                </article>
+            </div>
+}
+

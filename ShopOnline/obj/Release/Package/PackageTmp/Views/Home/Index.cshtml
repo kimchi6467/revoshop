@@ -1,0 +1,188 @@
+﻿<script type="text/javascript">
+    $('ul#nav > li.test1').prepend(
+        '<div class="menu-img-icon"><img src="//bizweb.dktcdn.net/100/154/087/themes/612450/assets/hot-icon.png?1515765301774" alt="hot-icon.png"></div>'
+    );
+
+    $('ul#nav > li.test2').prepend(
+        '<div class="menu-img-icon"><img src="//bizweb.dktcdn.net/100/154/087/themes/612450/assets/new-icon.png?1515765301774" alt="new-icon.png"></div>'
+    );
+</script>
+<h1 class="hidden">Revo</h1>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    @Html.Action("QuangCao","ControlPanel")
+    <!-- Controls
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    </a> -->
+</div>
+
+<div class="table-service hidden-xs hidden-sm">
+
+    <div class="container">
+        <table class="service">
+            <tr class="service-tr">
+                <th class="service-th">
+                    <div class="service-th-div">
+                        <img src="~/Hinhsanpham/giaohangnhanh.png" alt="icon-guide-1" />
+                        <div class="text">
+                            <h5 class="hidden-xs"><a href="#">Giao hàng </a></h5>
+                            <p class="chinh_sach">miễn phí</p>
+                        </div>
+                    </div>
+                </th>
+                <th class="service-th">
+                    <div class="service-th-div">
+                        <img src="~/Hinhsanpham/tien.png" alt="icon-guide-2" />
+                        <div class="text">
+                            <h5 class="hidden-xs"><a href="#">Thanh toán</a></h5>
+                            <p class="chinh_sach"> khi nhận hàng</p>
+                        </div>
+                    </div>
+                </th>
+                <th class="service-th">
+                    <div class="service-th-div">
+                        <img src="~/Hinhsanpham/xacthuc.png" alt="icon-guide-3" />
+                        <div class="text">
+                            <h5 class="hidden-xs"><a href="#">Hoàn trả tiền</a></h5>
+                            <p class="chinh_sach">trong 3 ngày</p>
+                        </div>
+                    </div>
+                </th>
+                <th class="service-th">
+                    <div class="service-th-div">
+                        <img src="~/Hinhsanpham/quatang.png" alt="icon-guide-4" />
+                        <div class="text">
+                            <h5 class="hidden-xs"><a href="#">Quà tặng </a></h5>
+                            <p class="chinh_sach">miễn phí</p>
+                        </div>
+                    </div>
+                </th>
+                <th class="service-th">
+                    <div class="service-th-div">
+                        <img src="~/Hinhsanpham/thanhtoan.png" alt="icon-guide-5" />
+                        <div class="text">
+                            <h5 class="hidden-xs"><a href="#">Thanh toán </a></h5>
+                            <p class="chinh_sach">bảo mật</p>
+                        </div>
+                    </div>
+                </th>
+                <th class="service-th">
+                    <div class="service-th-div" style="border:0">
+                        <img src="~/Hinhsanpham/hotro.png" alt="icon-guide-6" />
+                        <div class="text">
+                            <h5 class="hidden-xs"><a href="#">Hỗ trợ </a></h5>
+                            <p class="chinh_sach">24/7</p>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="main-col">
+    <div class="container">
+        <div class="std">
+            <!-- Best Seller Slider -->
+            <div class="best-seller-pro wow bounceInUp animated animated color" style="visibility: visible;">
+                <div class="slider-items-products">
+
+                    <div class="col-xs-12 col-sm-12 col-md-2 ">
+                        <div class="new_title center">
+                            <h2><a href="aenean-id-diam-at-leo">SẢN PHẨM MỚI CẬP NHẬT</a></h2>
+                        </div>                   
+                    </div>
+                    <div class="col-md-10 masonry-container">
+                     @Html.Action("SanPhamMoi","Home")                                   
+                    </div>
+                </div>
+            </div>
+            <!-- End Best Seller Slider -->
+        </div>
+    </div>
+</div>
+
+
+
+<div class="main-col">
+    <div class="container">
+        <div class="std">
+            <!-- Best Seller Slider -->
+            <div class="best-seller-pro wow bounceInUp animated animated color-1" style="visibility: visible;">
+                <div class="slider-items-products">
+
+                    <div class="col-xs-12 col-sm-12 col-md-2 ">
+                        <div class="new_title center color-1">
+                            <h2><a href="nulla-at-ipsum-facilisis">SẢN PHẨM ĐIỆN THOẠI</a></h2>
+                        </div>                       
+                    </div>
+                    <div class="col-md-10 masonry-container">                    
+                        @Html.Action("SanphamDienThoai","Home")                        
+                    </div>
+                </div>
+            </div>
+            <!-- End Best Seller Slider -->
+        </div>
+    </div>
+</div>
+
+
+
+<div class="main-col">
+    <div class="container">
+
+        <div class="std">
+            <!-- Best Seller Slider -->
+            <div class="best-seller-pro wow bounceInUp animated animated color-4" style="visibility: visible;">
+                <div class="slider-items-products">
+
+                    <div class="col-xs-12 col-sm-12 col-md-2 ">
+                        <div class="new_title center color-4">
+                            <h2><a href="sed-sodales-magna">PHỤ KIỆN MÁY TÍNH</a></h2>
+                        </div>
+                 
+                    </div>
+                    <div class="col-md-10 masonry-container">
+                        <div class="item-index"></div>
+                      @Html.Action("SanphamMayTinh","Home")
+                    </div>
+                </div>
+            </div>
+            <!-- End Best Seller Slider -->
+        </div>
+
+    </div>
+</div>
+<div class="promo-banner-section wow bounceInUp animated visible-lg">
+    <div class="container">
+        <!-- hien thi quang cao cuoi trang-->
+        @*@Html.Action("QuangCaoCuoiTrang","Quantri")*@
+        <!-- dong hien thi quang cao cuoi trang-->
+    </div>
+</div>
+<section class="latest-blog wow bounceInDown animated">
+    <div class="container">
+        <div class="blog-title">
+            <h2>Bài viết mới</h2>
+        </div>
+        <div class="row">
+            @Html.Action("LAYTINTUNMOIHOME", "Home")
+        </div>
+    </div>
+</section>

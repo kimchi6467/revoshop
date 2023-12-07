@@ -1,0 +1,780 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SHOPONLINEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="UserAdmin" />
+          </Key>
+          <Property Name="UserAdmin" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="PassAdmin" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Hoten" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CHITIETDONTHANG">
+          <Key>
+            <PropertyRef Name="MaDonHang" />
+            <PropertyRef Name="MaSANPHAM" />
+          </Key>
+          <Property Name="MaDonHang" Type="int" Nullable="false" />
+          <Property Name="MaSANPHAM" Type="int" Nullable="false" />
+          <Property Name="Soluong" Type="int" />
+          <Property Name="Dongia" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sodienthoai" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DANHMUC">
+          <Key>
+            <PropertyRef Name="MaDM" />
+          </Key>
+          <Property Name="MaDM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenDANHMUC" Type="nvarchar" MaxLength="50" />
+          <Property Name="meta" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DONDATHANG">
+          <Key>
+            <PropertyRef Name="MaDonHang" />
+          </Key>
+          <Property Name="MaDonHang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dathanhtoan" Type="bit" />
+          <Property Name="Tinhtranggiaohang" Type="bit" />
+          <Property Name="Ngaydat" Type="datetime" />
+          <Property Name="Ngaygiao" Type="datetime" />
+          <Property Name="MaKH" Type="int" />
+        </EntityType>
+        <EntityType Name="GopY">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="TieuDe" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoiDung" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Taikhoan" Type="varchar" MaxLength="50" />
+          <Property Name="Matkhau" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="DiachiKH" Type="nvarchar" MaxLength="200" />
+          <Property Name="DienthoaiKH" Type="varchar" MaxLength="50" />
+          <Property Name="Ngaysinh" Type="datetime" />
+        </EntityType>
+        <EntityType Name="LienHe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sodienthoai" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="menu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="link" Type="nvarchar(max)" />
+          <Property Name="meta" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NHASANXUAT">
+          <Key>
+            <PropertyRef Name="MaNSX" />
+          </Key>
+          <Property Name="MaNSX" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenNSX" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="meta" Type="nvarchar" MaxLength="50" />
+          <Property Name="Diachi" Type="nvarchar" MaxLength="200" />
+          <Property Name="DienThoai" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="QLTrangGioiThieu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TieuDe" Type="nvarchar(max)" />
+          <Property Name="NoiDung" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="QUANGCAOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="slider1" Type="nvarchar(max)" />
+          <Property Name="linkslider1" Type="nvarchar(max)" />
+          <Property Name="slider2" Type="nvarchar(max)" />
+          <Property Name="linkslider2" Type="nvarchar(max)" />
+          <Property Name="slider3" Type="nvarchar(max)" />
+          <Property Name="linkslider3" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="QuanLyTrangLienHe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GioiThieu" Type="nvarchar(max)" />
+          <Property Name="DiaChi" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="SodienThoai" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SANPHAM">
+          <Key>
+            <PropertyRef Name="MaSANPHAM" />
+          </Key>
+          <Property Name="MaSANPHAM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenSANPHAM" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="meta" Type="nvarchar" MaxLength="50" />
+          <Property Name="Giaban" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="GioiThieu" Type="nvarchar(max)" />
+          <Property Name="Mota" Type="nvarchar(max)" />
+          <Property Name="HinhAnh" Type="varchar" MaxLength="50" />
+          <Property Name="HinhAnh1" Type="varchar" MaxLength="50" />
+          <Property Name="HinhAnh2" Type="varchar" MaxLength="50" />
+          <Property Name="Ngaycapnhat" Type="datetime" />
+          <Property Name="Soluongton" Type="int" />
+          <Property Name="MaDM" Type="int" />
+          <Property Name="MaNSX" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TheLoai">
+          <Key>
+            <PropertyRef Name="MaTheLoai" />
+          </Key>
+          <Property Name="MaTheLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenTheLoai" Type="nvarchar(max)" />
+          <Property Name="meta" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TinTuc">
+          <Key>
+            <PropertyRef Name="MaTinTuc" />
+          </Key>
+          <Property Name="MaTinTuc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenTinTuc" Type="nvarchar(max)" />
+          <Property Name="NoiDungChiTiet" Type="nvarchar(max)" />
+          <Property Name="HinhANh" Type="nvarchar(max)" />
+          <Property Name="NgayCapNhat" Type="datetime" />
+          <Property Name="MaTheLoai" Type="int" />
+          <Property Name="meta" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_DANHMUC">
+          <End Role="DANHMUC" Type="Self.DANHMUC" Multiplicity="0..1" />
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DANHMUC">
+              <PropertyRef Name="MaDM" />
+            </Principal>
+            <Dependent Role="SANPHAM">
+              <PropertyRef Name="MaDM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Khachhang">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="DONDATHANG">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHASANXUAT">
+          <End Role="NHASANXUAT" Type="Self.NHASANXUAT" Multiplicity="0..1" />
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHASANXUAT">
+              <PropertyRef Name="MaNSX" />
+            </Principal>
+            <Dependent Role="SANPHAM">
+              <PropertyRef Name="MaNSX" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TinTuc_TheLoai1">
+          <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="0..1" />
+          <End Role="TinTuc" Type="Self.TinTuc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TheLoai">
+              <PropertyRef Name="MaTheLoai" />
+            </Principal>
+            <Dependent Role="TinTuc">
+              <PropertyRef Name="MaTheLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SHOPONLINEModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHITIETDONTHANG" EntityType="Self.CHITIETDONTHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DANHMUC" EntityType="Self.DANHMUC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DONDATHANG" EntityType="Self.DONDATHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GopY" EntityType="Self.GopY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LienHe" EntityType="Self.LienHe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="menu" EntityType="Self.menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHASANXUAT" EntityType="Self.NHASANXUAT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QLTrangGioiThieu" EntityType="Self.QLTrangGioiThieu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QUANGCAOS" EntityType="Self.QUANGCAOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuanLyTrangLienHe" EntityType="Self.QuanLyTrangLienHe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TheLoai" EntityType="Self.TheLoai" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DANHMUC" Association="Self.FK_DANHMUC">
+            <End Role="DANHMUC" EntitySet="DANHMUC" />
+            <End Role="SANPHAM" EntitySet="SANPHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Khachhang" Association="Self.FK_Khachhang">
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+            <End Role="DONDATHANG" EntitySet="DONDATHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHASANXUAT" Association="Self.FK_NHASANXUAT">
+            <End Role="NHASANXUAT" EntitySet="NHASANXUAT" />
+            <End Role="SANPHAM" EntitySet="SANPHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TinTuc_TheLoai1" Association="Self.FK_TinTuc_TheLoai1">
+            <End Role="TheLoai" EntitySet="TheLoai" />
+            <End Role="TinTuc" EntitySet="TinTuc" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SHOPONLINEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SHOPONLINEEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="SHOPONLINEModel.Admin" />
+          <EntitySet Name="CHITIETDONTHANGs" EntityType="SHOPONLINEModel.CHITIETDONTHANG" />
+          <EntitySet Name="contacts" EntityType="SHOPONLINEModel.contact" />
+          <EntitySet Name="DANHMUCs" EntityType="SHOPONLINEModel.DANHMUC" />
+          <EntitySet Name="DONDATHANGs" EntityType="SHOPONLINEModel.DONDATHANG" />
+          <EntitySet Name="KHACHHANGs" EntityType="SHOPONLINEModel.KHACHHANG" />
+          <EntitySet Name="LienHes" EntityType="SHOPONLINEModel.LienHe" />
+          <EntitySet Name="menus" EntityType="SHOPONLINEModel.menu" />
+          <EntitySet Name="NHASANXUATs" EntityType="SHOPONLINEModel.NHASANXUAT" />
+          <EntitySet Name="QUANGCAOS" EntityType="SHOPONLINEModel.QUANGCAO" />
+          <EntitySet Name="SANPHAMs" EntityType="SHOPONLINEModel.SANPHAM" />
+          <EntitySet Name="sysdiagrams" EntityType="SHOPONLINEModel.sysdiagram" />
+          <EntitySet Name="TheLoais" EntityType="SHOPONLINEModel.TheLoai" />
+          <EntitySet Name="TinTucs" EntityType="SHOPONLINEModel.TinTuc" />
+          <AssociationSet Name="FK_DANHMUC" Association="SHOPONLINEModel.FK_DANHMUC">
+            <End Role="DANHMUC" EntitySet="DANHMUCs" />
+            <End Role="SANPHAM" EntitySet="SANPHAMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Khachhang" Association="SHOPONLINEModel.FK_Khachhang">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHASANXUAT" Association="SHOPONLINEModel.FK_NHASANXUAT">
+            <End Role="NHASANXUAT" EntitySet="NHASANXUATs" />
+            <End Role="SANPHAM" EntitySet="SANPHAMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TinTuc_TheLoai1" Association="SHOPONLINEModel.FK_TinTuc_TheLoai1">
+            <End Role="TheLoai" EntitySet="TheLoais" />
+            <End Role="TinTuc" EntitySet="TinTucs" />
+          </AssociationSet>
+          <EntitySet Name="Gopies" EntityType="SHOPONLINEModel.GopY" />
+          <EntitySet Name="QuanLyTrangLienHes" EntityType="SHOPONLINEModel.QuanLyTrangLienHe" />
+          <EntitySet Name="QLTrangGioiThieux" EntityType="SHOPONLINEModel.QLTrangGioiThieu" />
+        </EntityContainer>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="UserAdmin" />
+          </Key>
+          <Property Name="UserAdmin" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PassAdmin" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Hoten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CHITIETDONTHANG">
+          <Key>
+            <PropertyRef Name="MaDonHang" />
+            <PropertyRef Name="MaSANPHAM" />
+          </Key>
+          <Property Name="MaDonHang" Type="Int32" Nullable="false" />
+          <Property Name="MaSANPHAM" Type="Int32" Nullable="false" />
+          <Property Name="Soluong" Type="Int32" />
+          <Property Name="Dongia" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sodienthoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DANHMUC">
+          <Key>
+            <PropertyRef Name="MaDM" />
+          </Key>
+          <Property Name="MaDM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenDANHMUC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SANPHAMs" Relationship="SHOPONLINEModel.FK_DANHMUC" FromRole="DANHMUC" ToRole="SANPHAM" />
+        </EntityType>
+        <EntityType Name="DONDATHANG">
+          <Key>
+            <PropertyRef Name="MaDonHang" />
+          </Key>
+          <Property Name="MaDonHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dathanhtoan" Type="Boolean" />
+          <Property Name="Tinhtranggiaohang" Type="Boolean" />
+          <Property Name="Ngaydat" Type="DateTime" Precision="3" />
+          <Property Name="Ngaygiao" Type="DateTime" Precision="3" />
+          <Property Name="MaKH" Type="Int32" />
+          <NavigationProperty Name="KHACHHANG" Relationship="SHOPONLINEModel.FK_Khachhang" FromRole="DONDATHANG" ToRole="KHACHHANG" />
+        </EntityType>
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HoTen" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Taikhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Matkhau" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DiachiKH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DienthoaiKH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ngaysinh" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="DONDATHANGs" Relationship="SHOPONLINEModel.FK_Khachhang" FromRole="KHACHHANG" ToRole="DONDATHANG" />
+        </EntityType>
+        <EntityType Name="LienHe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sodienthoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="menu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NHASANXUAT">
+          <Key>
+            <PropertyRef Name="MaNSX" />
+          </Key>
+          <Property Name="MaNSX" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenNSX" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Diachi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DienThoai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SANPHAMs" Relationship="SHOPONLINEModel.FK_NHASANXUAT" FromRole="NHASANXUAT" ToRole="SANPHAM" />
+        </EntityType>
+        <EntityType Name="QUANGCAO">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="slider1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="linkslider1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="slider2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="linkslider2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="slider3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="linkslider3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SANPHAM">
+          <Key>
+            <PropertyRef Name="MaSANPHAM" />
+          </Key>
+          <Property Name="MaSANPHAM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenSANPHAM" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="meta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Giaban" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="GioiThieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HinhAnh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HinhAnh1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HinhAnh2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ngaycapnhat" Type="DateTime" Precision="3" />
+          <Property Name="Soluongton" Type="Int32" />
+          <Property Name="MaDM" Type="Int32" />
+          <Property Name="MaNSX" Type="Int32" />
+          <NavigationProperty Name="DANHMUC" Relationship="SHOPONLINEModel.FK_DANHMUC" FromRole="SANPHAM" ToRole="DANHMUC" />
+          <NavigationProperty Name="NHASANXUAT" Relationship="SHOPONLINEModel.FK_NHASANXUAT" FromRole="SANPHAM" ToRole="NHASANXUAT" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TheLoai">
+          <Key>
+            <PropertyRef Name="MaTheLoai" />
+          </Key>
+          <Property Name="MaTheLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenTheLoai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TinTucs" Relationship="SHOPONLINEModel.FK_TinTuc_TheLoai1" FromRole="TheLoai" ToRole="TinTuc" />
+        </EntityType>
+        <EntityType Name="TinTuc">
+          <Key>
+            <PropertyRef Name="MaTinTuc" />
+          </Key>
+          <Property Name="MaTinTuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenTinTuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDungChiTiet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HinhANh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+          <Property Name="MaTheLoai" Type="Int32" />
+          <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TheLoai" Relationship="SHOPONLINEModel.FK_TinTuc_TheLoai1" FromRole="TinTuc" ToRole="TheLoai" />
+        </EntityType>
+        <Association Name="FK_DANHMUC">
+          <End Type="SHOPONLINEModel.DANHMUC" Role="DANHMUC" Multiplicity="0..1" />
+          <End Type="SHOPONLINEModel.SANPHAM" Role="SANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DANHMUC">
+              <PropertyRef Name="MaDM" />
+            </Principal>
+            <Dependent Role="SANPHAM">
+              <PropertyRef Name="MaDM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Khachhang">
+          <End Type="SHOPONLINEModel.KHACHHANG" Role="KHACHHANG" Multiplicity="0..1" />
+          <End Type="SHOPONLINEModel.DONDATHANG" Role="DONDATHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="DONDATHANG">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHASANXUAT">
+          <End Type="SHOPONLINEModel.NHASANXUAT" Role="NHASANXUAT" Multiplicity="0..1" />
+          <End Type="SHOPONLINEModel.SANPHAM" Role="SANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHASANXUAT">
+              <PropertyRef Name="MaNSX" />
+            </Principal>
+            <Dependent Role="SANPHAM">
+              <PropertyRef Name="MaNSX" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TinTuc_TheLoai1">
+          <End Type="SHOPONLINEModel.TheLoai" Role="TheLoai" Multiplicity="0..1" />
+          <End Type="SHOPONLINEModel.TinTuc" Role="TinTuc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TheLoai">
+              <PropertyRef Name="MaTheLoai" />
+            </Principal>
+            <Dependent Role="TinTuc">
+              <PropertyRef Name="MaTheLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GopY">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TieuDe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="QuanLyTrangLienHe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GioiThieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SodienThoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="QLTrangGioiThieu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TieuDe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SHOPONLINEModelStoreContainer" CdmEntityContainer="SHOPONLINEEntities">
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+                <ScalarProperty Name="PassAdmin" ColumnName="PassAdmin" />
+                <ScalarProperty Name="UserAdmin" ColumnName="UserAdmin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHITIETDONTHANGs">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.CHITIETDONTHANG">
+              <MappingFragment StoreEntitySet="CHITIETDONTHANG">
+                <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+                <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+                <ScalarProperty Name="MaSANPHAM" ColumnName="MaSANPHAM" />
+                <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contacts">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.contact">
+              <MappingFragment StoreEntitySet="contact">
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="sodienthoai" ColumnName="sodienthoai" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DANHMUCs">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.DANHMUC">
+              <MappingFragment StoreEntitySet="DANHMUC">
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="TenDANHMUC" ColumnName="TenDANHMUC" />
+                <ScalarProperty Name="MaDM" ColumnName="MaDM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DONDATHANGs">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.DONDATHANG">
+              <MappingFragment StoreEntitySet="DONDATHANG">
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="Ngaygiao" ColumnName="Ngaygiao" />
+                <ScalarProperty Name="Ngaydat" ColumnName="Ngaydat" />
+                <ScalarProperty Name="Tinhtranggiaohang" ColumnName="Tinhtranggiaohang" />
+                <ScalarProperty Name="Dathanhtoan" ColumnName="Dathanhtoan" />
+                <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHACHHANGs">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.KHACHHANG">
+              <MappingFragment StoreEntitySet="KHACHHANG">
+                <ScalarProperty Name="Ngaysinh" ColumnName="Ngaysinh" />
+                <ScalarProperty Name="DienthoaiKH" ColumnName="DienthoaiKH" />
+                <ScalarProperty Name="DiachiKH" ColumnName="DiachiKH" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+                <ScalarProperty Name="Taikhoan" ColumnName="Taikhoan" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LienHes">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.LienHe">
+              <MappingFragment StoreEntitySet="LienHe">
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Sodienthoai" ColumnName="Sodienthoai" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="menus">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.menu">
+              <MappingFragment StoreEntitySet="menu">
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHASANXUATs">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.NHASANXUAT">
+              <MappingFragment StoreEntitySet="NHASANXUAT">
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="TenNSX" ColumnName="TenNSX" />
+                <ScalarProperty Name="MaNSX" ColumnName="MaNSX" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QUANGCAOS">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.QUANGCAO">
+              <MappingFragment StoreEntitySet="QUANGCAOS">
+                <ScalarProperty Name="linkslider3" ColumnName="linkslider3" />
+                <ScalarProperty Name="slider3" ColumnName="slider3" />
+                <ScalarProperty Name="linkslider2" ColumnName="linkslider2" />
+                <ScalarProperty Name="slider2" ColumnName="slider2" />
+                <ScalarProperty Name="linkslider1" ColumnName="linkslider1" />
+                <ScalarProperty Name="slider1" ColumnName="slider1" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SANPHAMs">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.SANPHAM">
+              <MappingFragment StoreEntitySet="SANPHAM">
+                <ScalarProperty Name="MaNSX" ColumnName="MaNSX" />
+                <ScalarProperty Name="MaDM" ColumnName="MaDM" />
+                <ScalarProperty Name="Soluongton" ColumnName="Soluongton" />
+                <ScalarProperty Name="Ngaycapnhat" ColumnName="Ngaycapnhat" />
+                <ScalarProperty Name="HinhAnh2" ColumnName="HinhAnh2" />
+                <ScalarProperty Name="HinhAnh1" ColumnName="HinhAnh1" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="Mota" ColumnName="Mota" />
+                <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
+                <ScalarProperty Name="Giaban" ColumnName="Giaban" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="TenSANPHAM" ColumnName="TenSANPHAM" />
+                <ScalarProperty Name="MaSANPHAM" ColumnName="MaSANPHAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TheLoais">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.TheLoai">
+              <MappingFragment StoreEntitySet="TheLoai">
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+                <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TinTucs">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.TinTuc">
+              <MappingFragment StoreEntitySet="TinTuc">
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+                <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+                <ScalarProperty Name="HinhANh" ColumnName="HinhANh" />
+                <ScalarProperty Name="NoiDungChiTiet" ColumnName="NoiDungChiTiet" />
+                <ScalarProperty Name="TenTinTuc" ColumnName="TenTinTuc" />
+                <ScalarProperty Name="MaTinTuc" ColumnName="MaTinTuc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gopies">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.GopY">
+              <MappingFragment StoreEntitySet="GopY">
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuanLyTrangLienHes">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.QuanLyTrangLienHe">
+              <MappingFragment StoreEntitySet="QuanLyTrangLienHe">
+                <ScalarProperty Name="SodienThoai" ColumnName="SodienThoai" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QLTrangGioiThieux">
+            <EntityTypeMapping TypeName="SHOPONLINEModel.QLTrangGioiThieu">
+              <MappingFragment StoreEntitySet="QLTrangGioiThieu">
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="64d38c95126a47deae39e2741ba5aa61" Name="Diagram1">
+        <EntityTypeShape EntityType="SHOPONLINEModel.Admin" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.CHITIETDONTHANG" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.contact" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.DANHMUC" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.DONDATHANG" Width="1.5" PointX="5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.KHACHHANG" Width="1.5" PointX="2.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.LienHe" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.menu" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.NHASANXUAT" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.QUANGCAO" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.SANPHAM" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.sysdiagram" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.TheLoai" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.TinTuc" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.GopY" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.QuanLyTrangLienHe" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEModel.QLTrangGioiThieu" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="SHOPONLINEModel.FK_DANHMUC" ManuallyRouted="false" />
+        <AssociationConnector Association="SHOPONLINEModel.FK_Khachhang" ManuallyRouted="false" />
+        <AssociationConnector Association="SHOPONLINEModel.FK_NHASANXUAT" ManuallyRouted="false" />
+        <AssociationConnector Association="SHOPONLINEModel.FK_TinTuc_TheLoai1" ManuallyRouted="false" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
