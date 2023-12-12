@@ -176,9 +176,9 @@ namespace ShopOnline.Controllers
             KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];
             List<Giohang> gh = Laygiohang();
             ddh.MaKH = kh.MaKH;
-            ddh.Ngaydat = DateTime.Now;
-            var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["Ngaygiao"]);
-            ddh.Ngaygiao = DateTime.Parse(ngaygiao);
+            //ddh.Ngaydat = DateTime.Now;
+            //var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["Ngaygiao"]);
+            //ddh.Ngaygiao = DateTime.Parse(ngaygiao);
             ddh.Tinhtranggiaohang = false;
             ddh.Dathanhtoan = false;
             db.DONDATHANGs.Add(ddh);
