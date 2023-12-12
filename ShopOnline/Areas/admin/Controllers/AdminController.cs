@@ -7,13 +7,17 @@ using ShopOnline.Models;
 
 namespace ShopOnline.Areas.admin.Controllers
 {
+    
     public class AdminController : Controller
+
     {
         SHOPONLINEEntities db = new SHOPONLINEEntities();
         //
         // GET: /admin/Admin/
+        
         public ActionResult Index()
         {
+           
             return View();
         }
         // trang dang nhap 
