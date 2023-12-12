@@ -17,7 +17,7 @@ namespace ShopOnline.Areas.admin
             context.MapRoute(
                 "admin_default",
                 "admin/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Login", Controller = "Admin", id = UrlParameter.Optional }
             );
         }
     }
