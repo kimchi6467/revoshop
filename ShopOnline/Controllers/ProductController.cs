@@ -17,7 +17,7 @@ namespace ShopOnline.Controllers
         public ActionResult Index(int? page,string meta)
         {
             int pageNumber = (page ?? 1);
-            int pageSize = 10;
+           // int pageSize = 10;
             var v = from t in db.DANHMUCs
                 where t.meta == meta
                 select t;

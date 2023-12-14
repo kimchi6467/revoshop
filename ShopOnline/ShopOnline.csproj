@@ -1320,6 +1320,7 @@
     <Content Include="Content\owl.carousel.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\responsive.scss.css" />
+    <Content Include="Content\shop-homepage.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.scss.css" />
     <Content Include="Content\thankyou.css" />

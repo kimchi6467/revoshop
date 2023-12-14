@@ -60,6 +60,12 @@ namespace ShopOnline
              namespaces: new[] { "ShopOnline.Controllers" });
 
             routes.MapRoute(
+             name: "Search",
+             url: "search/",
+             defaults: new { controller = "Search", action = "Search" },
+             namespaces: new[] { "ShopOnline.Controllers" });
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

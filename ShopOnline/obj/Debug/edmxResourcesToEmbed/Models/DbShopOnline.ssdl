@@ -1,45 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="SHOPONLINEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="SHOPONLINEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008">
   <EntityType Name="Admin">
     <Key>
       <PropertyRef Name="UserAdmin" />
     </Key>
-    <Property Name="UserAdmin" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="PassAdmin" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="Hoten" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserAdmin" Nullable="false" MaxLength="30" Type="varchar" />
+    <Property Name="PassAdmin" Nullable="false" MaxLength="30" Type="varchar" />
+    <Property Name="Hoten" MaxLength="50" Type="nvarchar" />
   </EntityType>
   <EntityType Name="CHITIETDONTHANG">
     <Key>
       <PropertyRef Name="MaDonHang" />
       <PropertyRef Name="MaSANPHAM" />
     </Key>
-    <Property Name="MaDonHang" Type="int" Nullable="false" />
-    <Property Name="MaSANPHAM" Type="int" Nullable="false" />
+    <Property Name="MaDonHang" Nullable="false" Type="int" />
+    <Property Name="MaSANPHAM" Nullable="false" Type="int" />
     <Property Name="Soluong" Type="int" />
-    <Property Name="Dongia" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Dongia" Precision="18" Scale="0" Type="decimal" />
   </EntityType>
   <EntityType Name="contact">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="sodienthoai" Type="nvarchar" MaxLength="50" />
-    <Property Name="email" Type="nvarchar" MaxLength="50" />
-    <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="sodienthoai" MaxLength="50" Type="nvarchar" />
+    <Property Name="email" MaxLength="50" Type="nvarchar" />
+    <Property Name="diachi" MaxLength="50" Type="nvarchar" />
   </EntityType>
   <EntityType Name="DANHMUC">
     <Key>
       <PropertyRef Name="MaDM" />
     </Key>
-    <Property Name="MaDM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TenDANHMUC" Type="nvarchar" MaxLength="50" />
-    <Property Name="meta" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaDM" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="TenDANHMUC" MaxLength="50" Type="nvarchar" />
+    <Property Name="meta" MaxLength="50" Type="nvarchar" />
   </EntityType>
   <EntityType Name="DONDATHANG">
     <Key>
       <PropertyRef Name="MaDonHang" />
     </Key>
-    <Property Name="MaDonHang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaDonHang" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
     <Property Name="Dathanhtoan" Type="bit" />
     <Property Name="Tinhtranggiaohang" Type="bit" />
     <Property Name="Ngaydat" Type="datetime" />
@@ -50,58 +50,58 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
-    <Property Name="Email" Type="nvarchar" MaxLength="50" />
-    <Property Name="TieuDe" Type="nvarchar" MaxLength="50" />
-    <Property Name="NoiDung" Type="nvarchar" MaxLength="50" />
+    <Property Name="id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="HoTen" MaxLength="50" Type="nvarchar" />
+    <Property Name="Email" MaxLength="50" Type="nvarchar" />
+    <Property Name="TieuDe" MaxLength="50" Type="nvarchar" />
+    <Property Name="NoiDung" MaxLength="50" Type="nvarchar" />
   </EntityType>
   <EntityType Name="KHACHHANG">
     <Key>
       <PropertyRef Name="MaKH" />
     </Key>
-    <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="HoTen" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Taikhoan" Type="varchar" MaxLength="50" />
-    <Property Name="Matkhau" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Email" Type="varchar" MaxLength="100" />
-    <Property Name="DiachiKH" Type="nvarchar" MaxLength="200" />
-    <Property Name="DienthoaiKH" Type="varchar" MaxLength="50" />
+    <Property Name="MaKH" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="HoTen" Nullable="false" MaxLength="50" Type="nvarchar" />
+    <Property Name="Taikhoan" MaxLength="50" Type="varchar" />
+    <Property Name="Matkhau" Nullable="false" MaxLength="50" Type="varchar" />
+    <Property Name="Email" MaxLength="100" Type="varchar" />
+    <Property Name="DiachiKH" MaxLength="200" Type="nvarchar" />
+    <Property Name="DienthoaiKH" MaxLength="50" Type="varchar" />
     <Property Name="Ngaysinh" Type="datetime" />
   </EntityType>
   <EntityType Name="LienHe">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Sodienthoai" Type="nvarchar" MaxLength="50" />
-    <Property Name="Email" Type="nvarchar" MaxLength="50" />
-    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Sodienthoai" MaxLength="50" Type="nvarchar" />
+    <Property Name="Email" MaxLength="50" Type="nvarchar" />
+    <Property Name="DiaChi" MaxLength="50" Type="nvarchar" />
   </EntityType>
   <EntityType Name="menu">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="name" MaxLength="50" Type="nvarchar" />
     <Property Name="link" Type="nvarchar(max)" />
-    <Property Name="meta" Type="nvarchar" MaxLength="50" />
+    <Property Name="meta" MaxLength="50" Type="nvarchar" />
   </EntityType>
   <EntityType Name="NHASANXUAT">
     <Key>
       <PropertyRef Name="MaNSX" />
     </Key>
-    <Property Name="MaNSX" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TenNSX" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="meta" Type="nvarchar" MaxLength="50" />
-    <Property Name="Diachi" Type="nvarchar" MaxLength="200" />
-    <Property Name="DienThoai" Type="varchar" MaxLength="50" />
+    <Property Name="MaNSX" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="TenNSX" Nullable="false" MaxLength="50" Type="nvarchar" />
+    <Property Name="meta" MaxLength="50" Type="nvarchar" />
+    <Property Name="Diachi" MaxLength="200" Type="nvarchar" />
+    <Property Name="DienThoai" MaxLength="50" Type="varchar" />
   </EntityType>
   <EntityType Name="QLTrangGioiThieu">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
     <Property Name="TieuDe" Type="nvarchar(max)" />
     <Property Name="NoiDung" Type="nvarchar(max)" />
   </EntityType>
@@ -109,7 +109,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
     <Property Name="slider1" Type="nvarchar(max)" />
     <Property Name="linkslider1" Type="nvarchar(max)" />
     <Property Name="slider2" Type="nvarchar(max)" />
@@ -121,25 +121,25 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
     <Property Name="GioiThieu" Type="nvarchar(max)" />
     <Property Name="DiaChi" Type="nvarchar(max)" />
     <Property Name="Email" Type="nvarchar(max)" />
-    <Property Name="SodienThoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="SodienThoai" MaxLength="50" Type="nvarchar" />
   </EntityType>
   <EntityType Name="SANPHAM">
     <Key>
       <PropertyRef Name="MaSANPHAM" />
     </Key>
-    <Property Name="MaSANPHAM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TenSANPHAM" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="meta" Type="nvarchar" MaxLength="50" />
-    <Property Name="Giaban" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MaSANPHAM" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="TenSANPHAM" Nullable="false" MaxLength="100" Type="nvarchar" />
+    <Property Name="meta" MaxLength="50" Type="nvarchar" />
+    <Property Name="Giaban" Precision="18" Scale="0" Type="decimal" />
     <Property Name="GioiThieu" Type="nvarchar(max)" />
     <Property Name="Mota" Type="nvarchar(max)" />
-    <Property Name="HinhAnh" Type="varchar" MaxLength="50" />
-    <Property Name="HinhAnh1" Type="varchar" MaxLength="50" />
-    <Property Name="HinhAnh2" Type="varchar" MaxLength="50" />
+    <Property Name="HinhAnh" MaxLength="50" Type="varchar" />
+    <Property Name="HinhAnh1" MaxLength="50" Type="varchar" />
+    <Property Name="HinhAnh2" MaxLength="50" Type="varchar" />
     <Property Name="Ngaycapnhat" Type="datetime" />
     <Property Name="Soluongton" Type="int" />
     <Property Name="MaDM" Type="int" />
@@ -149,9 +149,9 @@
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Nullable="false" MaxLength="128" Type="nvarchar" />
+    <Property Name="principal_id" Nullable="false" Type="int" />
+    <Property Name="diagram_id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
@@ -159,7 +159,7 @@
     <Key>
       <PropertyRef Name="MaTheLoai" />
     </Key>
-    <Property Name="MaTheLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaTheLoai" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
     <Property Name="TenTheLoai" Type="nvarchar(max)" />
     <Property Name="meta" Type="nvarchar(max)" />
   </EntityType>
@@ -167,7 +167,7 @@
     <Key>
       <PropertyRef Name="MaTinTuc" />
     </Key>
-    <Property Name="MaTinTuc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaTinTuc" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
     <Property Name="TenTinTuc" Type="nvarchar(max)" />
     <Property Name="NoiDungChiTiet" Type="nvarchar(max)" />
     <Property Name="HinhANh" Type="nvarchar(max)" />
@@ -176,8 +176,8 @@
     <Property Name="meta" Type="nvarchar(max)" />
   </EntityType>
   <Association Name="FK_DANHMUC">
-    <End Role="DANHMUC" Type="Self.DANHMUC" Multiplicity="0..1" />
-    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <End Type="Self.DANHMUC" Multiplicity="0..1" Role="DANHMUC" />
+    <End Type="Self.SANPHAM" Multiplicity="*" Role="SANPHAM" />
     <ReferentialConstraint>
       <Principal Role="DANHMUC">
         <PropertyRef Name="MaDM" />
@@ -188,8 +188,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Khachhang">
-    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
-    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="*" />
+    <End Type="Self.KHACHHANG" Multiplicity="0..1" Role="KHACHHANG" />
+    <End Type="Self.DONDATHANG" Multiplicity="*" Role="DONDATHANG" />
     <ReferentialConstraint>
       <Principal Role="KHACHHANG">
         <PropertyRef Name="MaKH" />
@@ -200,8 +200,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_NHASANXUAT">
-    <End Role="NHASANXUAT" Type="Self.NHASANXUAT" Multiplicity="0..1" />
-    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <End Type="Self.NHASANXUAT" Multiplicity="0..1" Role="NHASANXUAT" />
+    <End Type="Self.SANPHAM" Multiplicity="*" Role="SANPHAM" />
     <ReferentialConstraint>
       <Principal Role="NHASANXUAT">
         <PropertyRef Name="MaNSX" />
@@ -212,8 +212,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_TinTuc_TheLoai1">
-    <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="0..1" />
-    <End Role="TinTuc" Type="Self.TinTuc" Multiplicity="*" />
+    <End Type="Self.TheLoai" Multiplicity="0..1" Role="TheLoai" />
+    <End Type="Self.TinTuc" Multiplicity="*" Role="TinTuc" />
     <ReferentialConstraint>
       <Principal Role="TheLoai">
         <PropertyRef Name="MaTheLoai" />
@@ -242,20 +242,20 @@
     <EntitySet Name="TheLoai" EntityType="Self.TheLoai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_DANHMUC" Association="Self.FK_DANHMUC">
-      <End Role="DANHMUC" EntitySet="DANHMUC" />
-      <End Role="SANPHAM" EntitySet="SANPHAM" />
+      <End EntitySet="DANHMUC" Role="DANHMUC" />
+      <End EntitySet="SANPHAM" Role="SANPHAM" />
     </AssociationSet>
     <AssociationSet Name="FK_Khachhang" Association="Self.FK_Khachhang">
-      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
-      <End Role="DONDATHANG" EntitySet="DONDATHANG" />
+      <End EntitySet="KHACHHANG" Role="KHACHHANG" />
+      <End EntitySet="DONDATHANG" Role="DONDATHANG" />
     </AssociationSet>
     <AssociationSet Name="FK_NHASANXUAT" Association="Self.FK_NHASANXUAT">
-      <End Role="NHASANXUAT" EntitySet="NHASANXUAT" />
-      <End Role="SANPHAM" EntitySet="SANPHAM" />
+      <End EntitySet="NHASANXUAT" Role="NHASANXUAT" />
+      <End EntitySet="SANPHAM" Role="SANPHAM" />
     </AssociationSet>
     <AssociationSet Name="FK_TinTuc_TheLoai1" Association="Self.FK_TinTuc_TheLoai1">
-      <End Role="TheLoai" EntitySet="TheLoai" />
-      <End Role="TinTuc" EntitySet="TinTuc" />
+      <End EntitySet="TheLoai" Role="TheLoai" />
+      <End EntitySet="TinTuc" Role="TinTuc" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
