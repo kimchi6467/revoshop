@@ -100,25 +100,32 @@
 
                                                     <div class="ttaddtocart">
                                                         <a href="@Url.Action("ThemGiohang", "GioHang", new { @iMaSANPHAM = @Model.MaSANPHAM, @strURL = Request.Url.ToString() })" class="btn-cart btn_buy_now btn_qv">
-                                                            ĐẶT MUA
+                                                            Thêm vào giỏ hàng
                                                         </a>
+
+                                                 
                                                        
-                                                    </div>
+                                                    
 
 
                                                 </div>
+
+
                                             </form>
+
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
                         </div>
+
                         <div class="product-collateral wow bounceInUp animated">
                             <div class="col-sm-12">
                                 <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
                                     <li class="active"> <a href="#product_tabs_description" data-toggle="tab">Thông tin sản phẩm </a> </li>
                                     <li> <a href="#product_tabs_custom" data-toggle="tab">Thông tin khác</a> </li>
+                                    <button class="button btn-continue" title="Tiếp tục mua hàng" type="button" onclick="window.location.href = '/'"><span><span>Tiếp tục mua hàng</span></span></button>
                                 </ul>
                                 <div id="productTabContent" class="tab-content">
                                     <div class="tab-pane fade in active" id="product_tabs_description">
