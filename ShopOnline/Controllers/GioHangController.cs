@@ -4,15 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ShopOnline.Models;
+using System.Configuration;
+using System.Web.Script.Serialization;
 
 namespace ShopOnline.Controllers
 {
     public class GioHangController : Controller
     {
+
         //
         // GET: /GioHang/
         //Tao doi tuong db chua dữ liệu từ model dbBansach đã tạo. 
         SHOPONLINEEntities db = new SHOPONLINEEntities();
+
+        private const string GioHangSession = "GioHangSession";
+       
         //Lay gio hang
         public List<Giohang> Laygiohang()
         {
@@ -21,7 +27,7 @@ namespace ShopOnline.Controllers
             {
                 //Neu gio hang chua ton tai thi khoi tao listGiohang
                 lstGiohang = new List<Giohang>();
-                Session["Giohang"] = lstGiohang;
+                Session["Giohang"] = lstGiohang;    
             }
             return lstGiohang;
         }
@@ -101,6 +107,38 @@ namespace ShopOnline.Controllers
         //    return PartialView(lstGiohang);
         //}
 
+
+        public JsonResult Update(string GioHang)
+        {
+            var Cart = new JavaScriptSerializer().Deserialize<List<Giohang>>(GioHang);
+            var sessionCart = (List<Giohang>)Session[GioHang];
+
+            foreach (var item in sessionCart)
+            {
+                var jsonItem = Cart.SingleOrDefault(x => x.iMaSANPHAM == item.iMaSANPHAM);
+                if (jsonItem != null)
+                {
+                    item.iSoluong = jsonItem.iSoluong;
+                }
+            }
+            Session[GioHang] = sessionCart;
+            return Json(new
+            {
+                status = true
+            });
+        }
+
+        //----------xoa tat ca--------------------
+
+        public JsonResult DeleteAll()
+        {
+            Session["Giohang"] = null;
+            return Json(new
+            {
+                status = true
+            });
+        }
+        
 
         //Cap nhat Giỏ hàng
         public ActionResult CapnhatGiohang(int iMaSP, FormCollection f)
@@ -193,10 +231,62 @@ namespace ShopOnline.Controllers
                 ctdh.Dongia = (decimal)item.dDongia;
                 db.CHITIETDONTHANGs.Add(ctdh);
             }
+          
+
             db.SaveChanges();
             Session["Giohang"] = null;
             return RedirectToAction("Xacnhandonhang", "GioHang");
         }
+
+        //-----------------Thanh toan----------------------
+        [HttpGet]
+        public ActionResult Payment()
+        {
+            var GioHang = Session["Giohang"];
+            var list = new List<Giohang>();
+            if (GioHang != null)
+            {
+                list = (List<Giohang>)GioHang;
+            }
+            return View(list);
+        }
+
+        [HttpPost]
+        public ActionResult Payment(string shipName, string mobile, string address, string email)
+        {
+            var khachhang = new KHACHHANG();
+            khachhang.Ngaysinh = DateTime.Now;
+            khachhang.DiachiKH = address;
+            khachhang.DienthoaiKH = mobile;
+            khachhang.HoTen = shipName;
+            khachhang.Email = email;
+
+            try
+            {
+                var id = new KhachHangDao().Insert(khachhang);
+                var cart = (List<Giohang>)Session["Giohang"];
+                var detailDao = new Models.ChiTietKhachHangDao();
+               
+                foreach (var item in cart)
+                {
+                    var orderDetail = new CHITIETDONTHANG();
+                    orderDetail.MaSANPHAM = item.iMaSANPHAM;
+                  
+                   
+                    orderDetail.Soluong = item.iSoluong;
+                    detailDao.Insert(orderDetail);
+
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                //ghi log
+                return Redirect("/loi-thanh-toan");
+            }
+            return Redirect("/hoan-thanh");
+        }
+
         public ActionResult Xacnhandonhang()
         {
             return View();
