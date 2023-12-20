@@ -108,6 +108,16 @@ namespace ShopOnline.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpGet]
+        public ActionResult DoiMatKhau()
+        {
+
+            Session["TaiKhoan"] = null;
+            return RedirectToAction("Index", "Home");
+           
+        }
+
+
 
     }
 }

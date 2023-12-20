@@ -252,29 +252,31 @@ namespace ShopOnline.Controllers
         }
 
         [HttpPost]
-        public ActionResult Payment(string shipName, string mobile, string address, string email)
+        public ActionResult Payment(string HoTen, string DienthoaiKH, string DiachiKH, string Email)
         {
             var khachhang = new KHACHHANG();
-            khachhang.Ngaysinh = DateTime.Now;
-            khachhang.DiachiKH = address;
-            khachhang.DienthoaiKH = mobile;
-            khachhang.HoTen = shipName;
-            khachhang.Email = email;
+            //khachhang.Ngaysinh = DateTime.Now;
+            khachhang.DiachiKH = DiachiKH;
+            khachhang.DienthoaiKH = DienthoaiKH;
+            khachhang.HoTen = HoTen;
+            khachhang.Email = Email;
 
             try
             {
                 var id = new KhachHangDao().Insert(khachhang);
                 var cart = (List<Giohang>)Session["Giohang"];
-                var detailDao = new Models.ChiTietKhachHangDao();
-               
+                var detailDao = new ChiTietKhachHangDao();
+                decimal total = 0;
                 foreach (var item in cart)
                 {
                     var orderDetail = new CHITIETDONTHANG();
                     orderDetail.MaSANPHAM = item.iMaSANPHAM;
-                  
-                   
+                    //orderDetail.MaDonHang = id;
+                    //orderDetail.Dongia = item.dDongia;
                     orderDetail.Soluong = item.iSoluong;
                     detailDao.Insert(orderDetail);
+
+                 
 
                 }
                
@@ -285,6 +287,11 @@ namespace ShopOnline.Controllers
                 return Redirect("/loi-thanh-toan");
             }
             return Redirect("/hoan-thanh");
+        }
+
+        public ActionResult Success()
+        {
+            return View();
         }
 
         public ActionResult Xacnhandonhang()
