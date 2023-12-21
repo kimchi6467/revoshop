@@ -224,12 +224,12 @@ namespace ShopOnline.Controllers
             //Them chi tiet don hang            
             foreach (var item in gh)
             {
-                CHITIETDONTHANG ctdh = new CHITIETDONTHANG();
+                CHITIETDONDATHANG ctdh = new CHITIETDONDATHANG();
                 ctdh.MaDonHang = ddh.MaDonHang;
                 ctdh.MaSANPHAM = item.iMaSANPHAM;
                 ctdh.Soluong = item.iSoluong;
                 ctdh.Dongia = (decimal)item.dDongia;
-                db.CHITIETDONTHANGs.Add(ctdh);
+                db.CHITIETDONDATHANGs.Add(ctdh);
             }
           
 
@@ -251,43 +251,43 @@ namespace ShopOnline.Controllers
             return View(list);
         }
 
-        [HttpPost]
-        public ActionResult Payment(string HoTen, string DienthoaiKH, string DiachiKH, string Email)
-        {
-            var khachhang = new KHACHHANG();
-            //khachhang.Ngaysinh = DateTime.Now;
-            khachhang.DiachiKH = DiachiKH;
-            khachhang.DienthoaiKH = DienthoaiKH;
-            khachhang.HoTen = HoTen;
-            khachhang.Email = Email;
+        //[HttpPost]
+        //public ActionResult Payment(string HoTen, string DienthoaiKH, string DiachiKH, string Email)
+        //{
+        //    var khachhang = new KHACHHANG();
+        //    //khachhang.Ngaysinh = DateTime.Now;
+        //    khachhang.DiachiKH = DiachiKH;
+        //    khachhang.DienthoaiKH = DienthoaiKH;
+        //    khachhang.HoTen = HoTen;
+        //    khachhang.Email = Email;
 
-            try
-            {
-                var id = new KhachHangDao().Insert(khachhang);
-                var cart = (List<Giohang>)Session["Giohang"];
-                var detailDao = new ChiTietKhachHangDao();
-                decimal total = 0;
-                foreach (var item in cart)
-                {
-                    var orderDetail = new CHITIETDONTHANG();
-                    orderDetail.MaSANPHAM = item.iMaSANPHAM;
-                    //orderDetail.MaDonHang = id;
-                    //orderDetail.Dongia = item.dDongia;
-                    orderDetail.Soluong = item.iSoluong;
-                    detailDao.Insert(orderDetail);
+        //    try
+        //    {
+        //        var id = new KhachHangDao().Insert(khachhang);
+        //        var cart = (List<Giohang>)Session["Giohang"];
+        //        var detailDao = new ChiTietKhachHangDao();
+        //        decimal total = 0;
+        //        foreach (var item in cart)
+        //        {
+        //            var orderDetail = new CHITIETDONTHANG();
+        //            orderDetail.MaSANPHAM = item.iMaSANPHAM;
+        //            //orderDetail.MaDonHang = id;
+        //            //orderDetail.Dongia = item.dDongia;
+        //            orderDetail.Soluong = item.iSoluong;
+        //            detailDao.Insert(orderDetail);
 
                  
 
-                }
+        //        }
                
-            }
-            catch (Exception ex)
-            {
-                //ghi log
-                return Redirect("/loi-thanh-toan");
-            }
-            return Redirect("/hoan-thanh");
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        //ghi log
+        //        return Redirect("/loi-thanh-toan");
+        //    }
+        //    return Redirect("/hoan-thanh");
+        //}
 
         public ActionResult Success()
         {

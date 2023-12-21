@@ -12,19 +12,24 @@ namespace ShopOnline.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TheLoai
+    public partial class NHANVIEN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TheLoai()
+        public NHANVIEN()
         {
-            this.TinTucs = new HashSet<TinTuc>();
+            this.KHACHHANGs = new HashSet<KHACHHANG>();
         }
     
-        public int MaTheLoai { get; set; }
-        public string TenTheLoai { get; set; }
-        public string meta { get; set; }
+        public int MaNV { get; set; }
+        public string HoTen { get; set; }
+        public string Taikhoan { get; set; }
+        public string Matkhau { get; set; }
+        public string Email { get; set; }
+        public string DiachiNV { get; set; }
+        public string DienthoaiNV { get; set; }
+        public Nullable<System.DateTime> Ngaysinh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TinTuc> TinTucs { get; set; }
+        public virtual ICollection<KHACHHANG> KHACHHANGs { get; set; }
     }
 }

@@ -34,7 +34,7 @@ namespace ShopOnline.Controllers
         }
         public ActionResult QuangCao()
         {
-            var Quangcao = from _quangcao in db.QUANGCAOS
+            var Quangcao = from _quangcao in db.QUANGCAOs
                            select _quangcao;
             return PartialView(Quangcao);
         }

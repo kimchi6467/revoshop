@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="71c01904a8ff4006aefabf576df32de8" Name="Diagram1">
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.Admin" Width="1.5" PointX="9.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.CHITIETDONDATHANG" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.DANHMUC" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.DONDATHANG" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.DONHANG" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.GopY" Width="1.5" PointX="5.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.LienHe" Width="1.5" PointX="7.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.menu" Width="1.5" PointX="9.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.NHANVIEN" Width="1.5" PointX="1.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.NHASANXUAT" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.QLTrangGioiThieu" Width="1.5" PointX="10.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.QUANGCAO" Width="1.5" PointX="11.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.QuanLyTrangLienHe" Width="1.5" PointX="11.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.SANPHAM" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.sysdiagram" Width="1.5" PointX="11.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.TheLoai" Width="1.5" PointX="5.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.TinTuc" Width="1.5" PointX="8" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_CHITIETDONDATHANG_DONDATHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_CHITIETDONDATHANG_SANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_DONHANG_CHITIETDONDATHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_DANHMUC" ManuallyRouted="false" />
+        <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_Khachhang" ManuallyRouted="false" />
+        <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_KHACHHANG_NHANVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_NHASANXUAT" ManuallyRouted="false" />
+        <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_TinTuc_TheLoai1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

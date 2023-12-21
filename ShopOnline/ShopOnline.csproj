@@ -166,71 +166,74 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CHITIETDONTHANG.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\contact.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+    <Compile Include="Models\CHITIETDONDATHANG.cs">
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DANHMUC.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DbShopOnline.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbShopOnline.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DbShopOnline.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DbShopOnline.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbShopOnline.edmx</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DONDATHANG.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DONHANG.cs">
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\GopY.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KHACHHANG.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LienHe.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\menu.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NHANVIEN.cs">
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NHASANXUAT.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\QLTrangGioiThieu.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\QUANGCAO.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\QuanLyTrangLienHe.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SANPHAM.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SHOPONLINEEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SHOPONLINEEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SHOPONLINEEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SHOPONLINEEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SHOPONLINEEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TheLoai.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TinTuc.cs">
-      <DependentUpon>DbShopOnline.tt</DependentUpon>
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1344,15 +1347,15 @@
     <Content Include="Hinhsanpham\thanhtoan.png" />
     <Content Include="Hinhsanpham\tien.png" />
     <Content Include="Hinhsanpham\xacthuc.png" />
-    <Content Include="Models\DbShopOnline.Context.tt">
+    <Content Include="Models\SHOPONLINEEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbShopOnline.edmx</DependentUpon>
-      <LastGenOutput>DbShopOnline.Context.cs</LastGenOutput>
+      <DependentUpon>SHOPONLINEEntities.edmx</DependentUpon>
+      <LastGenOutput>SHOPONLINEEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DbShopOnline.tt">
+    <Content Include="Models\SHOPONLINEEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbShopOnline.edmx</DependentUpon>
-      <LastGenOutput>DbShopOnline.cs</LastGenOutput>
+      <DependentUpon>SHOPONLINEEntities.edmx</DependentUpon>
+      <LastGenOutput>SHOPONLINEEntities.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\api.jquery.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1364,13 +1367,6 @@
     <Content Include="Scripts\imagesLoaded.js" />
     <Content Include="Scripts\iwishheader.js" />
     <Content Include="Scripts\jgrowl.js" />
-    <EntityDeploy Include="Models\DbShopOnline.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DbShopOnline.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DbShopOnline.edmx.diagram">
-      <DependentUpon>DbShopOnline.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\admin\Views\web.config" />
     <Content Include="Areas\admin\less\mixins.less" />
     <Content Include="Areas\admin\less\sb-admin-2.less" />
@@ -1487,6 +1483,13 @@
     <Content Include="Areas\admin\Views\DonDatHang\Index.cshtml" />
     <Content Include="Areas\admin\Views\QuanLyTrangLienHe\Edit.cshtml" />
     <Content Include="Areas\admin\Views\QuanLyTrangGioiThieu\Edit.cshtml" />
+    <EntityDeploy Include="Models\SHOPONLINEEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SHOPONLINEEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SHOPONLINEEntities.edmx.diagram">
+      <DependentUpon>SHOPONLINEEntities.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\shop.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

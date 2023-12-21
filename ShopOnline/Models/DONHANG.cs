@@ -12,11 +12,17 @@ namespace ShopOnline.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class contact
+    public partial class DONHANG
     {
-        public int Id { get; set; }
-        public string sodienthoai { get; set; }
-        public string email { get; set; }
-        public string diachi { get; set; }
+        public int MaDH { get; set; }
+        public string HoTenKH { get; set; }
+        public string DiaChiKH { get; set; }
+        public string EmailKH { get; set; }
+        public string SodtKH { get; set; }
+        public Nullable<int> MaCTDH { get; set; }
+        public Nullable<System.DateTime> Ngaydat { get; set; }
+        public Nullable<System.DateTime> Ngaygiao { get; set; }
+    
+        public virtual CHITIETDONDATHANG CHITIETDONDATHANG { get; set; }
     }
 }

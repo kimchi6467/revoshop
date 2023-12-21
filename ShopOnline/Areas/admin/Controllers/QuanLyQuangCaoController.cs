@@ -18,7 +18,7 @@ namespace ShopOnline.Areas.admin.Controllers
         // GET: /admin/QuanLyQuangCao/
         public ActionResult Index()
         {
-            return View(db.QUANGCAOS.ToList());
+            return View(db.QUANGCAOs.ToList());
         }
 
         // GET: /admin/QuanLyQuangCao/Details/5
@@ -28,7 +28,7 @@ namespace ShopOnline.Areas.admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            QUANGCAO quangcao = db.QUANGCAOS.Find(id);
+            QUANGCAO quangcao = db.QUANGCAOs.Find(id);
             if (quangcao == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace ShopOnline.Areas.admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.QUANGCAOS.Add(quangcao);
+                db.QUANGCAOs.Add(quangcao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace ShopOnline.Areas.admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            QUANGCAO quangcao = db.QUANGCAOS.Find(id);
+            QUANGCAO quangcao = db.QUANGCAOs.Find(id);
             if (quangcao == null)
             {
                 return HttpNotFound();
@@ -121,7 +121,7 @@ namespace ShopOnline.Areas.admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            QUANGCAO quangcao = db.QUANGCAOS.Find(id);
+            QUANGCAO quangcao = db.QUANGCAOs.Find(id);
             if (quangcao == null)
             {
                 return HttpNotFound();
@@ -134,8 +134,8 @@ namespace ShopOnline.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            QUANGCAO quangcao = db.QUANGCAOS.Find(id);
-            db.QUANGCAOS.Remove(quangcao);
+            QUANGCAO quangcao = db.QUANGCAOs.Find(id);
+            db.QUANGCAOs.Remove(quangcao);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

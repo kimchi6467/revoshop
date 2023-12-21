@@ -14,6 +14,7 @@ namespace ShopOnline.Models
     
     public partial class KHACHHANG
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHACHHANG()
         {
             this.DONDATHANGs = new HashSet<DONDATHANG>();
@@ -27,7 +28,10 @@ namespace ShopOnline.Models
         public string DiachiKH { get; set; }
         public string DienthoaiKH { get; set; }
         public Nullable<System.DateTime> Ngaysinh { get; set; }
+        public Nullable<int> MANV { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DONDATHANG> DONDATHANGs { get; set; }
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }

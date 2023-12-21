@@ -14,6 +14,12 @@ namespace ShopOnline.Models
     
     public partial class SANPHAM
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SANPHAM()
+        {
+            this.CHITIETDONDATHANGs = new HashSet<CHITIETDONDATHANG>();
+        }
+    
         public int MaSANPHAM { get; set; }
         public string TenSANPHAM { get; set; }
         public string meta { get; set; }
@@ -28,6 +34,8 @@ namespace ShopOnline.Models
         public Nullable<int> MaDM { get; set; }
         public Nullable<int> MaNSX { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHITIETDONDATHANG> CHITIETDONDATHANGs { get; set; }
         public virtual DANHMUC DANHMUC { get; set; }
         public virtual NHASANXUAT NHASANXUAT { get; set; }
     }
