@@ -12,11 +12,11 @@ namespace ShopOnline.Models
         {
             db = new SHOPONLINEEntities();
         }
-        public bool Insert(CHITIETDONTHANG chitiet)
+        public bool Insert(CHITIETDONDATHANG chitiet)
         {
             try
             {
-                db.CHITIETDONTHANGs.Add(chitiet);
+                db.CHITIETDONDATHANGs.Add(chitiet);
                 db.SaveChanges();
                 return true;
             }

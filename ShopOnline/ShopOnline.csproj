@@ -171,6 +171,7 @@
     <Compile Include="Models\CHITIETDONDATHANG.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChiTietKhachHangDao.cs" />
     <Compile Include="Models\DANHMUC.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
@@ -181,12 +182,14 @@
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Models\GioHangItem.cs" />
     <Compile Include="Models\GopY.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KHACHHANG.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\KhachHangDao.cs" />
     <Compile Include="Models\LienHe.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
@@ -1309,6 +1312,7 @@
     <Content Include="Areas\admin\vendor\morrisjs\morris.min.js" />
     <Content Include="Areas\admin\vendor\raphael\raphael.js" />
     <Content Include="Areas\admin\vendor\raphael\raphael.min.js" />
+    <Content Include="assets\GioHangController.js" />
     <Content Include="Content\base.scss.css" />
     <Content Include="Content\blogmate.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -1554,6 +1558,9 @@
     <Content Include="Views\Home\ChiTietGioiThieu.cshtml" />
     <Content Include="Views\Search\search.cshtml" />
     <Content Include="Views\Members\QuenMK.cshtml" />
+    <Content Include="Views\Members\DoiMatKhau.cshtml" />
+    <Content Include="Views\GioHang\Success.cshtml" />
+    <Content Include="Views\GioHang\Payment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

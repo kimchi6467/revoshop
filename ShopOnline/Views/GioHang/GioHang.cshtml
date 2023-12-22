@@ -11,49 +11,103 @@
     <script src="/assets/GioHangController.js"></script>
 }
 
-<div class="content">
-    <div class="section group">
-        @if (Model.Count > 0)
-        {
-            <table class="table">
-                <thead>
-                    <tr>
-                        <td>Mã SP</td>
-                        <td>Tên SP</td>
-                        <td>Ảnh SP</td>
-                        <td>Số lượng</td>
-                        <td>Đơn giá</td>
-                        <td>Thành tiền</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>@item.iMaSANPHAM</td>
-                            <td>@item.sTenSANPHAM</td>
-                            <td><image src="~/Hinhsanpham/@item.sHinhAnh" width="150" /></td>
-                            <td><input type="text" class="txtSoLuong" data-id="@item.iMaSANPHAM" value="@item.iSoluong" /></td>
-                            <td>
-                                <span class="cart-price"> <span class="price">@String.Format("{0:0,0}", item.dThanhtien)</span> </span>
-                            </td>
-                            <td><a href="/GioHang/XoaGiohang?iMaSp=@item.iMaSANPHAM" data-id="@item.iMaSANPHAM" class="btn-delete">Xoá</a></td>
-                        </tr>
-                    }
+    <section class="main-container col1-layout">
+        <div class="main container">
+            <div class="col-main">
+                <div class="cart">
+                    <div class="page-title">
+                        <h1 class="cat-heading blog_">Giỏ hàng</h1>
 
-                </tbody>
-            </table>
+                    </div>
+                    <div class="content">
+                        <div class="section group">
+                            @if (Model.Count > 0)
+                            {
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <td>Mã SP</td>
+                                            <td>Tên SP</td>
+                                            <td>Ảnh SP</td>
+                                            <td>Số lượng</td>
+                                            <td>Đơn giá</td>
+                                            <td>Xóa sản phẩm</td>
+                                            @*<td>Thành tiền</td>*@
+                                            <td></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.iMaSANPHAM</td>
+                                                <td>@item.sTenSANPHAM</td>
+                                                <td><image src="~/Hinhsanpham/@item.sHinhAnh" width="150" /></td>
+                                                <td><input type="text" class="txtSoLuong" data-id="@item.iMaSANPHAM" value="@item.iSoluong" /></td>
+                                                <td>
+                                                    <span class="cart-price"> <span class="price">@String.Format("{0:0,0}", item.dThanhtien)</span> </span>
+                                                </td>
+                                                <td><a href="/GioHang/XoaGiohang?iMaSp=@item.iMaSANPHAM" data-id="@item.iMaSANPHAM" class="btn-delete">Xoá</a></td>
+                                            </tr>
+                                        }
 
-            <button id="btnContinue" class="button">Tiếp tục mua hàng</button>
-            <button id="btnUpdate" class="button">Cập nhật giỏ hàng</button>
-            <button id="btnDeleteAll" class="button">Xoá giỏ hàng</button>
-            <button id="btnPayment" class="button">Thanh toán</button>
-        }
-        else
-        {
-            <span class="alert alert-danger">Chưa có sản phẩm nào trong giỏ hàng</span>
-        }
+                                    </tbody>
+                                </table>
 
-    </div>
-</div>
+                                <button id="btnContinue" class="button">Tiếp tục mua hàng</button>
+                                <button id="btnUpdate" class="button">Cập nhật giỏ hàng</button>
+                                <button id="btnDeleteAll" class="button">Xoá giỏ hàng</button>
+                                
+                            }
+                            else
+                            {
+                                <span class="alert alert-danger">Chưa có sản phẩm nào trong giỏ hàng</span>
+                            }
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="cart-collaterals row">
+
+                        <div class="totals col-sm-4 col-md-offset-8">
+                            <h3>Tổng cộng:@String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ</h3>
+                            <div class="inner " style="padding:0; margin:0">
+                                <table class="table shopping-cart-table-total" id="shopping-cart-totals-table">
+                                    <colgroup>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+
+                                </table>
+                                <ul class="checkout">
+                                    <li>
+
+                                        
+                                        <button id="btnPayment" class="button btn-proceed-checkout " type="button"><span>Mua Ngay</span></button>
+
+                                    </li>
+                                </ul>
+                                <ul class="btn">
+
+                                </ul>
+                                <ul class="checkout">
+                                    <li>
+
+                                        <button class="button btn-proceed-checkout" title="Tiến hành thanh toán" type="button" onclick="window.location.href = '/GioHang/Dathang'"><span>Đăng nhập để mua hàng</span></button>
+                                       
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <!--inner-->
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+

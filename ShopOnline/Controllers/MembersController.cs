@@ -113,8 +113,10 @@ namespace ShopOnline.Controllers
         {
 
             Session["TaiKhoan"] = null;
-            return RedirectToAction("Index", "Home");
-           
+            {
+                return View();
+            }
+
         }
 
 

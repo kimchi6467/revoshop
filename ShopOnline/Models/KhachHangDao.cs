@@ -12,11 +12,11 @@ namespace ShopOnline.Models
         {
             db = new SHOPONLINEEntities();
         }
-        public long Insert(KHACHHANG khachhang)
+        public long Insert(DONHANG donhang)
         {
-            db.KHACHHANGs.Add(khachhang);
+            db.DONHANGs.Add(donhang);
             db.SaveChanges();
-            return khachhang.MaKH;
+            return donhang.MaDH;
         }
     }
 }

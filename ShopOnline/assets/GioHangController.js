@@ -12,20 +12,22 @@
         });
 
         $('#btnUpdate').off('click').on('click', function () {
-            var listProduct = $('.txtSoLuong');
-            var cartList = [];
-            $.each(listProduct, function (i, item) {
-                cartList.push({
-                    iSoluong: $(item).val(),
+            var listSanPham = $('.txtSoLuong');
+            var GioHangList = [];
+            $.each(listSanPham, function (_i, item) {
+                GioHangList.push({
+                    SoLuong: $(item).val(),
                     
-                    iMaSANPHAM: $(item).data('id')
+                    SANPHAM: {
+                        MaSANPHAM: $(item).data('maSanPham')
+                    }
                     
                 });
             });
 
             $.ajax({
                 url: '/GioHang/Update',
-                data: {GioHang: JSON.stringify(cartList) },
+                data: { GioHang: JSON.stringify(GioHangList) },
                 dataType: 'json',
                 type: 'POST',
                 success: function (res) {

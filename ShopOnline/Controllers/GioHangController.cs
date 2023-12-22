@@ -110,18 +110,24 @@ namespace ShopOnline.Controllers
 
         public JsonResult Update(string GioHang)
         {
-            var Cart = new JavaScriptSerializer().Deserialize<List<Giohang>>(GioHang);
-            var sessionCart = (List<Giohang>)Session[GioHang];
 
-            foreach (var item in sessionCart)
+            var jsonGioHang = new JavaScriptSerializer().Deserialize<List<GioHangItem>>(GioHang);
+            //var SessionGioHang = (List<GioHangItem>)Session[GioHangSession];
+            List<Giohang> lstGiohang = Laygiohang();
+
+
+
+            foreach (var item in lstGiohang)
             {
-                var jsonItem = Cart.SingleOrDefault(x => x.iMaSANPHAM == item.iMaSANPHAM);
-                if (jsonItem != null)
+                foreach (var jitem in jsonGioHang)
                 {
-                    item.iSoluong = jsonItem.iSoluong;
+                    if (lstGiohang != null)
+                    {
+                        item.iSoluong = jitem.SoLuong;
+                    }
                 }
             }
-            Session[GioHang] = sessionCart;
+            Session[GioHangSession] = lstGiohang;
             return Json(new
             {
                 status = true
@@ -251,43 +257,43 @@ namespace ShopOnline.Controllers
             return View(list);
         }
 
-        //[HttpPost]
-        //public ActionResult Payment(string HoTen, string DienthoaiKH, string DiachiKH, string Email)
-        //{
-        //    var khachhang = new KHACHHANG();
-        //    //khachhang.Ngaysinh = DateTime.Now;
-        //    khachhang.DiachiKH = DiachiKH;
-        //    khachhang.DienthoaiKH = DienthoaiKH;
-        //    khachhang.HoTen = HoTen;
-        //    khachhang.Email = Email;
+        [HttpPost]
+        public ActionResult Payment(string HoTen, string DienthoaiKH, string DiachiKH, string Email)
+        {
+            var donhang = new DONHANG();
+            donhang.Ngaydat = DateTime.Now;
+            donhang.DiaChiKH = DiachiKH;
+            donhang.SodtKH = DienthoaiKH;
+            donhang.HoTenKH = HoTen;
+            donhang.EmailKH = Email;
 
-        //    try
-        //    {
-        //        var id = new KhachHangDao().Insert(khachhang);
-        //        var cart = (List<Giohang>)Session["Giohang"];
-        //        var detailDao = new ChiTietKhachHangDao();
-        //        decimal total = 0;
-        //        foreach (var item in cart)
-        //        {
-        //            var orderDetail = new CHITIETDONTHANG();
-        //            orderDetail.MaSANPHAM = item.iMaSANPHAM;
-        //            //orderDetail.MaDonHang = id;
-        //            //orderDetail.Dongia = item.dDongia;
-        //            orderDetail.Soluong = item.iSoluong;
-        //            detailDao.Insert(orderDetail);
+            try
+            {
+                var id = new KhachHangDao().Insert(donhang);
+                var cart = (List<DONDATHANG>)Session["Giohang"];
+                var detailDao = new CHITIETDONDATHANG();
+                decimal total = 0;
+                foreach (var item in cart)
+                {
+                    var orderDetail = new CHITIETDONDATHANG();
+                    //orderDetail.MaCTDH = item.iMaSANPHAM;
+                    //orderDetail.MaSANPHAM = item.sTenSANPHAM;
+                    //orderDetail.Dongia = item.dDongia;
+                    //orderDetail.Soluong = item.iSoluong;
+                    //detailDao.Insert(orderDetail);
 
-                 
 
-        //        }
-               
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //ghi log
-        //        return Redirect("/loi-thanh-toan");
-        //    }
-        //    return Redirect("/hoan-thanh");
-        //}
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //ghi log
+                return Redirect("/loi-thanh-toan");
+            }
+            return Redirect("/hoan-thanh");
+        }
 
         public ActionResult Success()
         {
