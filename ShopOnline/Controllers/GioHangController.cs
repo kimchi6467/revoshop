@@ -107,43 +107,7 @@ namespace ShopOnline.Controllers
         //    return PartialView(lstGiohang);
         //}
 
-
-        public JsonResult Update(string GioHang)
-        {
-
-            var jsonGioHang = new JavaScriptSerializer().Deserialize<List<GioHangItem>>(GioHang);
-            //var SessionGioHang = (List<GioHangItem>)Session[GioHangSession];
-            List<Giohang> lstGiohang = Laygiohang();
-
-
-
-            foreach (var item in lstGiohang)
-            {
-                foreach (var jitem in jsonGioHang)
-                {
-                    if (lstGiohang != null)
-                    {
-                        item.iSoluong = jitem.SoLuong;
-                    }
-                }
-            }
-            Session[GioHangSession] = lstGiohang;
-            return Json(new
-            {
-                status = true
-            });
-        }
-
-        //----------xoa tat ca--------------------
-
-        public JsonResult DeleteAll()
-        {
-            Session["Giohang"] = null;
-            return Json(new
-            {
-                status = true
-            });
-        }
+        
         
 
         //Cap nhat Giỏ hàng
@@ -244,15 +208,53 @@ namespace ShopOnline.Controllers
             return RedirectToAction("Xacnhandonhang", "GioHang");
         }
 
+        //----------Cap nhap gio hang--------------------
+        public JsonResult Update(string GioHang)
+        {
+
+            var jsonGioHang = new JavaScriptSerializer().Deserialize<List<GioHangItem>>(GioHang);
+            //var SessionGioHang = (List<GioHangItem>)Session[GioHangSession];
+            List<Giohang> lstGiohang = Laygiohang();
+
+
+
+            foreach (var item in lstGiohang)
+            {
+                foreach (var jitem in jsonGioHang)
+                {
+                    if (lstGiohang != null)
+                    {
+                        item.iSoluong = jitem.SoLuong;
+                    }
+                }
+            }
+            Session[GioHangSession] = lstGiohang;
+            return Json(new
+            {
+                status = true
+            });
+        }
+
+        //----------xoa tat ca--------------------
+
+        public JsonResult DeleteAll()
+        {
+            Session["Giohang"] = null;
+            return Json(new
+            {
+                status = true
+            });
+        }
+
         //-----------------Thanh toan----------------------
         [HttpGet]
         public ActionResult Payment()
         {
-            var GioHang = Session["Giohang"];
+            List<Giohang> lstGiohang = Laygiohang();
             var list = new List<Giohang>();
-            if (GioHang != null)
+            if (lstGiohang != null)
             {
-                list = (List<Giohang>)GioHang;
+                list = (List<Giohang>)lstGiohang;
             }
             return View(list);
         }
@@ -269,18 +271,18 @@ namespace ShopOnline.Controllers
 
             try
             {
-                var id = new KhachHangDao().Insert(donhang);
-                var cart = (List<DONDATHANG>)Session["Giohang"];
-                var detailDao = new CHITIETDONDATHANG();
-                decimal total = 0;
-                foreach (var item in cart)
+                var maDH = new DonHangDao().Insert(donhang);
+                List<Giohang> lstGiohang = Laygiohang();
+                var ChiTietDao = new ChiTietDonHangDao();
+                //decimal total = 0;
+                foreach (var item in lstGiohang)
                 {
-                    var orderDetail = new CHITIETDONDATHANG();
-                    //orderDetail.MaCTDH = item.iMaSANPHAM;
-                    //orderDetail.MaSANPHAM = item.sTenSANPHAM;
-                    //orderDetail.Dongia = item.dDongia;
-                    //orderDetail.Soluong = item.iSoluong;
-                    //detailDao.Insert(orderDetail);
+                    var ChiTietDonHang = new CHITIETDONDATHANG();
+                    ChiTietDonHang.MaSANPHAM = item.iMaSANPHAM;
+                    //ChiTietDonHang.MaCTDH = ;
+                    //ChiTietDonHang.Dongia = item.dDongia;
+                    ChiTietDonHang.Soluong = item.iSoluong;
+                    ChiTietDao.Insert(ChiTietDonHang);
 
 
 

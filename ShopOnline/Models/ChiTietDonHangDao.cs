@@ -5,10 +5,10 @@ using System.Web;
 
 namespace ShopOnline.Models
 {
-    public class ChiTietKhachHangDao
+    public class ChiTietDonHangDao
     {
         SHOPONLINEEntities db = null;
-        public ChiTietKhachHangDao()
+        public ChiTietDonHangDao()
         {
             db = new SHOPONLINEEntities();
         }

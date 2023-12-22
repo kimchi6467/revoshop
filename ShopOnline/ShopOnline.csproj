@@ -171,7 +171,7 @@
     <Compile Include="Models\CHITIETDONDATHANG.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ChiTietKhachHangDao.cs" />
+    <Compile Include="Models\ChiTietDonHangDao.cs" />
     <Compile Include="Models\DANHMUC.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
@@ -189,7 +189,7 @@
     <Compile Include="Models\KHACHHANG.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\KhachHangDao.cs" />
+    <Compile Include="Models\DonHangDao.cs" />
     <Compile Include="Models\LienHe.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>

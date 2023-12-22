@@ -11,12 +11,12 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <td>Mã SP</td>
+                        @*<td>Mã SP</td>*@
                         <td>Tên SP</td>
                         <td>Ảnh SP</td>
                         <td>Số lượng</td>
                         <td>Đơn giá</td>
-                        <td>Thành tiền</td>
+                        @*<td>Thành tiền</td>*@
                         <td></td>
                     </tr>
                 </thead>
@@ -24,7 +24,7 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>@item.iMaSANPHAM</td>
+                            @*<td>@item.iMaSANPHAM</td>*@
                             <td>@item.sTenSANPHAM</td>
                             <td><image src="~/Hinhsanpham/@item.sHinhAnh" width="150" /></td>
                             <td><input type="text" class="txtSoLuong" data-id="@item.iMaSANPHAM" value="@item.iSoluong" /></td>
