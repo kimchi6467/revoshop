@@ -84,6 +84,12 @@ namespace ShopOnline
           namespaces: new[] { "OnlineShop.Controllers" });
 
             routes.MapRoute(
+          name: "payment UnSuccess",
+          url: "loi-thanh-toan",
+          defaults: new { controller = "GioHang", action = "UnSuccess", id = UrlParameter.Optional },
+          namespaces: new[] { "OnlineShop.Controllers" });
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

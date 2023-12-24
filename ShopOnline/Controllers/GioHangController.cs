@@ -286,22 +286,22 @@ namespace ShopOnline.Controllers
                     ChiTietDonHang.Soluong = item.iSoluong;
                     ChiTietDao.Insert(ChiTietDonHang);
 
-                //total += (item.dDongia.GetValueOrDefault(0) * item.iSoluong);
-                //total = @String.Format("{0:0,0}", ViewBag.Tongtien);
+                    //total += (item.dDongia.GetValueOrDefault(0) * item.iSoluong);
+                    //total = @String.Format("{0:0,0}", ViewBag.Tongtien);
 
                 }
 
-                //string content = System.IO.File.ReadAllText(Server.MapPath("~/assets/neworder.html"));
+                string content = System.IO.File.ReadAllText(Server.MapPath("~/assets/neworder.html"));
 
-                //content = content.Replace("{{CustomerName}}", HoTen);
-                //content = content.Replace("{{Phone}}", DienthoaiKH);
-                //content = content.Replace("{{Email}}", Email);
-                //content = content.Replace("{{Address}}", DiachiKH);
-                ////content = content.Replace("{{Total}}", total.ToString("N0"));
-                //var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+                content = content.Replace("{{CustomerName}}", HoTen);
+                content = content.Replace("{{Phone}}", DienthoaiKH);
+                content = content.Replace("{{Email}}", Email);
+                content = content.Replace("{{Address}}", DiachiKH);
+                //content = content.Replace("{{Total}}", total.ToString("N0"));
+                var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
 
-                //new MailHelper().SendMail(Email, "Đơn hàng mới từ OnlineShop", content);
-                //new MailHelper().SendMail(toEmail, "Đơn hàng mới từ OnlineShop", content);
+                new MailHelper().SendMail(Email, "Đơn hàng mới từ OnlineShop", content);
+                new MailHelper().SendMail(toEmail, "Đơn hàng mới từ OnlineShop", content);
 
             }
             catch (Exception ex)
@@ -313,6 +313,11 @@ namespace ShopOnline.Controllers
         }
 
         public ActionResult Success()
+        {
+            return View();
+        }
+
+        public ActionResult UnSuccess()
         {
             return View();
         }
