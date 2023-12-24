@@ -16,7 +16,7 @@ namespace ShopOnline.Models
         public Double dDongia { set; get; }
         public int iSoluong { set; get; }
 
-        public int iSizegiay { set; get; }
+        public int iSize { set; get; }
         public Double dThanhtien
         {
             get { return iSoluong * dDongia; }
@@ -31,7 +31,7 @@ namespace ShopOnline.Models
             sHinhAnh = sanpham.HinhAnh;
             dDongia = double.Parse(sanpham.Giaban.ToString());
             iSoluong = 1;
-            iSizegiay = 1;
+            iSize = 1;
         }
     }
 }

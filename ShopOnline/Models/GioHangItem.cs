@@ -10,5 +10,6 @@ namespace ShopOnline.Models
     {
         public SANPHAM SANPHAM { set; get; }
         public int SoLuong { set; get; }
+        public int Size { set; get; }
     }
 }

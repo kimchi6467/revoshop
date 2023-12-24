@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using ShopOnline.Models;
 using System.Configuration;
 using System.Web.Script.Serialization;
+using Common;
 
 namespace ShopOnline.Controllers
 {
@@ -225,6 +226,7 @@ namespace ShopOnline.Controllers
                     if (lstGiohang != null)
                     {
                         item.iSoluong = jitem.SoLuong;
+                        
                     }
                 }
             }
@@ -274,7 +276,7 @@ namespace ShopOnline.Controllers
                 var maDH = new DonHangDao().Insert(donhang);
                 List<Giohang> lstGiohang = Laygiohang();
                 var ChiTietDao = new ChiTietDonHangDao();
-                //decimal total = 0;
+                decimal total = 0;
                 foreach (var item in lstGiohang)
                 {
                     var ChiTietDonHang = new CHITIETDONDATHANG();
@@ -284,9 +286,22 @@ namespace ShopOnline.Controllers
                     ChiTietDonHang.Soluong = item.iSoluong;
                     ChiTietDao.Insert(ChiTietDonHang);
 
-
+                //total += (item.dDongia.GetValueOrDefault(0) * item.iSoluong);
+                //total = @String.Format("{0:0,0}", ViewBag.Tongtien);
 
                 }
+
+                //string content = System.IO.File.ReadAllText(Server.MapPath("~/assets/neworder.html"));
+
+                //content = content.Replace("{{CustomerName}}", HoTen);
+                //content = content.Replace("{{Phone}}", DienthoaiKH);
+                //content = content.Replace("{{Email}}", Email);
+                //content = content.Replace("{{Address}}", DiachiKH);
+                ////content = content.Replace("{{Total}}", total.ToString("N0"));
+                //var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+
+                //new MailHelper().SendMail(Email, "Đơn hàng mới từ OnlineShop", content);
+                //new MailHelper().SendMail(toEmail, "Đơn hàng mới từ OnlineShop", content);
 
             }
             catch (Exception ex)

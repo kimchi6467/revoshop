@@ -153,6 +153,7 @@
     <Compile Include="Areas\admin\Controllers\QuanLyTrangLienHeController.cs" />
     <Compile Include="Areas\admin\Controllers\SanPhamController.cs" />
     <Compile Include="Areas\admin\Controllers\TinTucController.cs" />
+    <Compile Include="Common\MailHelper.cs" />
     <Compile Include="Controllers\ControlPanelController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\GioiThieuController.cs" />
@@ -1313,6 +1314,7 @@
     <Content Include="Areas\admin\vendor\raphael\raphael.js" />
     <Content Include="Areas\admin\vendor\raphael\raphael.min.js" />
     <Content Include="assets\GioHangController.js" />
+    <Content Include="assets\neworder.html" />
     <Content Include="Content\base.scss.css" />
     <Content Include="Content\blogmate.css" />
     <Content Include="Content\bootstrap.min.css" />

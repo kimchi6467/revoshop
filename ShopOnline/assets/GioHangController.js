@@ -13,10 +13,12 @@
 
         $('#btnUpdate').off('click').on('click', function () {
             var listSanPham = $('.txtSoLuong');
+            
             var GioHangList = [];
             $.each(listSanPham, function (_i, item) {
                 GioHangList.push({
                     SoLuong: $(item).val(),
+                    
                     
                     SANPHAM: {
                         MaSANPHAM: $(item).data('maSanPham')

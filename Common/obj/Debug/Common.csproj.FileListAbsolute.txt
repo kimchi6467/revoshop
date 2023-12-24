@@ -1,0 +1,6 @@
+D:\Do An\revoshop\Common\bin\Debug\Common.dll
+D:\Do An\revoshop\Common\bin\Debug\Common.pdb
+D:\Do An\revoshop\Common\obj\Debug\Common.csprojAssemblyReference.cache
+D:\Do An\revoshop\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\Do An\revoshop\Common\obj\Debug\Common.dll
+D:\Do An\revoshop\Common\obj\Debug\Common.pdb
