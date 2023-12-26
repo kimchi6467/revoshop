@@ -13,10 +13,20 @@
       <PropertyRef Name="MaCTDH" />
     </Key>
     <Property Name="MaCTDH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MaDonHang" Type="int" Nullable="false" />
+    <Property Name="MaDonHang" Type="int" />
+    <Property Name="MaDH" Type="int" />
     <Property Name="MaSANPHAM" Type="int" Nullable="false" />
+    <Property Name="MaSize" Type="int" />
     <Property Name="Soluong" Type="int" />
     <Property Name="Dongia" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="ChucNang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenChucNang" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaChucNang" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="DANHMUC">
     <Key>
@@ -46,7 +56,6 @@
     <Property Name="DiaChiKH" Type="nvarchar" MaxLength="200" />
     <Property Name="EmailKH" Type="nvarchar" MaxLength="100" />
     <Property Name="SodtKH" Type="varchar" MaxLength="50" />
-    <Property Name="MaCTDH" Type="int" />
     <Property Name="Ngaydat" Type="datetime" />
     <Property Name="Ngaygiao" Type="datetime" />
   </EntityType>
@@ -72,7 +81,6 @@
     <Property Name="DiachiKH" Type="nvarchar" MaxLength="200" />
     <Property Name="DienthoaiKH" Type="varchar" MaxLength="50" />
     <Property Name="Ngaysinh" Type="datetime" />
-    <Property Name="MANV" Type="int" />
   </EntityType>
   <EntityType Name="LienHe">
     <Key>
@@ -114,6 +122,17 @@
     <Property Name="meta" Type="nvarchar" MaxLength="50" />
     <Property Name="Diachi" Type="nvarchar" MaxLength="200" />
     <Property Name="DienThoai" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PhanQuyen">
+    <Key>
+      <PropertyRef Name="MaNV" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="MaNV" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Ghichu" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="QLTrangGioiThieu">
     <Key>
@@ -163,6 +182,13 @@
     <Property Name="MaDM" Type="int" />
     <Property Name="MaNSX" Type="int" />
   </EntityType>
+  <EntityType Name="SIZE">
+    <Key>
+      <PropertyRef Name="MaSize" />
+    </Key>
+    <Property Name="MaSize" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Size" Type="nchar" MaxLength="10" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -194,7 +220,7 @@
     <Property Name="meta" Type="nvarchar(max)" />
   </EntityType>
   <Association Name="FK_CHITIETDONDATHANG_DONDATHANG">
-    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="1" />
+    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="0..1" />
     <End Role="CHITIETDONDATHANG" Type="Self.CHITIETDONDATHANG" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="DONDATHANG">
@@ -202,6 +228,18 @@
       </Principal>
       <Dependent Role="CHITIETDONDATHANG">
         <PropertyRef Name="MaDonHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHITIETDONDATHANG_DONHANG">
+    <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="0..1" />
+    <End Role="CHITIETDONDATHANG" Type="Self.CHITIETDONDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONHANG">
+        <PropertyRef Name="MaDH" />
+      </Principal>
+      <Dependent Role="CHITIETDONDATHANG">
+        <PropertyRef Name="MaDH" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -217,6 +255,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_CHITIETDONDATHANG_SIZE">
+    <End Role="SIZE" Type="Self.SIZE" Multiplicity="0..1" />
+    <End Role="CHITIETDONDATHANG" Type="Self.CHITIETDONDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SIZE">
+        <PropertyRef Name="MaSize" />
+      </Principal>
+      <Dependent Role="CHITIETDONDATHANG">
+        <PropertyRef Name="MaSize" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChucNang_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="PhanQuyen">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_DANHMUC">
     <End Role="DANHMUC" Type="Self.DANHMUC" Multiplicity="0..1" />
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
@@ -229,42 +291,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_DONHANG_CHITIETDONDATHANG">
-    <End Role="CHITIETDONDATHANG" Type="Self.CHITIETDONDATHANG" Multiplicity="0..1" />
-    <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CHITIETDONDATHANG">
-        <PropertyRef Name="MaCTDH" />
-      </Principal>
-      <Dependent Role="DONHANG">
-        <PropertyRef Name="MaCTDH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Khachhang">
-    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
-    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KHACHHANG">
-        <PropertyRef Name="MaKH" />
-      </Principal>
-      <Dependent Role="DONDATHANG">
-        <PropertyRef Name="MaKH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_KHACHHANG_NHANVIEN">
-    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
-    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NHANVIEN">
-        <PropertyRef Name="MaNV" />
-      </Principal>
-      <Dependent Role="KHACHHANG">
-        <PropertyRef Name="MANV" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_NHASANXUAT">
     <End Role="NHASANXUAT" Type="Self.NHASANXUAT" Multiplicity="0..1" />
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
@@ -274,6 +300,18 @@
       </Principal>
       <Dependent Role="SANPHAM">
         <PropertyRef Name="MaNSX" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanQuyen_ChucNang">
+    <End Role="ChucNang" Type="Self.ChucNang" Multiplicity="1" />
+    <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChucNang">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PhanQuyen">
+        <PropertyRef Name="ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -292,6 +330,7 @@
   <EntityContainer Name="SHOPONLINEEntitiesModelStoreContainer">
     <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CHITIETDONDATHANG" EntityType="Self.CHITIETDONDATHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChucNang" EntityType="Self.ChucNang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DANHMUC" EntityType="Self.DANHMUC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DONDATHANG" EntityType="Self.DONDATHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DONHANG" EntityType="Self.DONHANG" Schema="dbo" store:Type="Tables" />
@@ -305,36 +344,48 @@
     <EntitySet Name="QUANGCAO" EntityType="Self.QUANGCAO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QuanLyTrangLienHe" EntityType="Self.QuanLyTrangLienHe" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SIZE" EntityType="Self.SIZE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TheLoai" EntityType="Self.TheLoai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PhanQuyen].[MaNV] AS [MaNV], 
+    [PhanQuyen].[ID] AS [ID], 
+    [PhanQuyen].[Ghichu] AS [Ghichu]
+    FROM [dbo].[PhanQuyen] AS [PhanQuyen]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_CHITIETDONDATHANG_DONDATHANG" Association="Self.FK_CHITIETDONDATHANG_DONDATHANG">
       <End Role="DONDATHANG" EntitySet="DONDATHANG" />
+      <End Role="CHITIETDONDATHANG" EntitySet="CHITIETDONDATHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHITIETDONDATHANG_DONHANG" Association="Self.FK_CHITIETDONDATHANG_DONHANG">
+      <End Role="DONHANG" EntitySet="DONHANG" />
       <End Role="CHITIETDONDATHANG" EntitySet="CHITIETDONDATHANG" />
     </AssociationSet>
     <AssociationSet Name="FK_CHITIETDONDATHANG_SANPHAM" Association="Self.FK_CHITIETDONDATHANG_SANPHAM">
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="CHITIETDONDATHANG" EntitySet="CHITIETDONDATHANG" />
     </AssociationSet>
+    <AssociationSet Name="FK_CHITIETDONDATHANG_SIZE" Association="Self.FK_CHITIETDONDATHANG_SIZE">
+      <End Role="SIZE" EntitySet="SIZE" />
+      <End Role="CHITIETDONDATHANG" EntitySet="CHITIETDONDATHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChucNang_NHANVIEN" Association="Self.FK_ChucNang_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="PhanQuyen" EntitySet="PhanQuyen" />
+    </AssociationSet>
     <AssociationSet Name="FK_DANHMUC" Association="Self.FK_DANHMUC">
       <End Role="DANHMUC" EntitySet="DANHMUC" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
     </AssociationSet>
-    <AssociationSet Name="FK_DONHANG_CHITIETDONDATHANG" Association="Self.FK_DONHANG_CHITIETDONDATHANG">
-      <End Role="CHITIETDONDATHANG" EntitySet="CHITIETDONDATHANG" />
-      <End Role="DONHANG" EntitySet="DONHANG" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Khachhang" Association="Self.FK_Khachhang">
-      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
-      <End Role="DONDATHANG" EntitySet="DONDATHANG" />
-    </AssociationSet>
-    <AssociationSet Name="FK_KHACHHANG_NHANVIEN" Association="Self.FK_KHACHHANG_NHANVIEN">
-      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
-      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
-    </AssociationSet>
     <AssociationSet Name="FK_NHASANXUAT" Association="Self.FK_NHASANXUAT">
       <End Role="NHASANXUAT" EntitySet="NHASANXUAT" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanQuyen_ChucNang" Association="Self.FK_PhanQuyen_ChucNang">
+      <End Role="ChucNang" EntitySet="ChucNang" />
+      <End Role="PhanQuyen" EntitySet="PhanQuyen" />
     </AssociationSet>
     <AssociationSet Name="FK_TinTuc_TheLoai1" Association="Self.FK_TinTuc_TheLoai1">
       <End Role="TheLoai" EntitySet="TheLoai" />

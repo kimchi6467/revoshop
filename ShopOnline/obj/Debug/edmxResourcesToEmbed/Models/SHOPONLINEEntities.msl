@@ -15,9 +15,20 @@
         <MappingFragment StoreEntitySet="CHITIETDONDATHANG">
           <ScalarProperty Name="MaCTDH" ColumnName="MaCTDH" />
           <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
           <ScalarProperty Name="MaSANPHAM" ColumnName="MaSANPHAM" />
+          <ScalarProperty Name="MaSize" ColumnName="MaSize" />
           <ScalarProperty Name="Soluong" ColumnName="Soluong" />
           <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChucNangs">
+      <EntityTypeMapping TypeName="SHOPONLINEEntitiesModel.ChucNang">
+        <MappingFragment StoreEntitySet="ChucNang">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenChucNang" ColumnName="TenChucNang" />
+          <ScalarProperty Name="MaChucNang" ColumnName="MaChucNang" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -50,7 +61,6 @@
           <ScalarProperty Name="DiaChiKH" ColumnName="DiaChiKH" />
           <ScalarProperty Name="EmailKH" ColumnName="EmailKH" />
           <ScalarProperty Name="SodtKH" ColumnName="SodtKH" />
-          <ScalarProperty Name="MaCTDH" ColumnName="MaCTDH" />
           <ScalarProperty Name="Ngaydat" ColumnName="Ngaydat" />
           <ScalarProperty Name="Ngaygiao" ColumnName="Ngaygiao" />
         </MappingFragment>
@@ -78,7 +88,6 @@
           <ScalarProperty Name="DiachiKH" ColumnName="DiachiKH" />
           <ScalarProperty Name="DienthoaiKH" ColumnName="DienthoaiKH" />
           <ScalarProperty Name="Ngaysinh" ColumnName="Ngaysinh" />
-          <ScalarProperty Name="MANV" ColumnName="MANV" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -179,6 +188,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="SIZEs">
+      <EntityTypeMapping TypeName="SHOPONLINEEntitiesModel.SIZE">
+        <MappingFragment StoreEntitySet="SIZE">
+          <ScalarProperty Name="MaSize" ColumnName="MaSize" />
+          <ScalarProperty Name="Size1" ColumnName="Size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="SHOPONLINEEntitiesModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -209,6 +226,15 @@
           <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
           <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
           <ScalarProperty Name="meta" ColumnName="meta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhanQuyens">
+      <EntityTypeMapping TypeName="SHOPONLINEEntitiesModel.PhanQuyen">
+        <MappingFragment StoreEntitySet="PhanQuyen">
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ghichu" ColumnName="Ghichu" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

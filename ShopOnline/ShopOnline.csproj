@@ -173,6 +173,9 @@
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietDonHangDao.cs" />
+    <Compile Include="Models\ChucNang.cs">
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DANHMUC.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
@@ -184,13 +187,13 @@
     </Compile>
     <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\GioHangItem.cs" />
+    <Compile Include="Models\DonHangDao.cs" />
     <Compile Include="Models\GopY.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KHACHHANG.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DonHangDao.cs" />
     <Compile Include="Models\LienHe.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
@@ -201,6 +204,9 @@
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NHASANXUAT.cs">
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhanQuyen.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\QLTrangGioiThieu.cs">
@@ -229,6 +235,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SHOPONLINEEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SIZE.cs">
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>

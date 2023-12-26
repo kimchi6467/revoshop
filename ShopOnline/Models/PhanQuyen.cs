@@ -12,15 +12,13 @@ namespace ShopOnline.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class KHACHHANG
+    public partial class PhanQuyen
     {
-        public int MaKH { get; set; }
-        public string HoTen { get; set; }
-        public string Taikhoan { get; set; }
-        public string Matkhau { get; set; }
-        public string Email { get; set; }
-        public string DiachiKH { get; set; }
-        public string DienthoaiKH { get; set; }
-        public Nullable<System.DateTime> Ngaysinh { get; set; }
+        public int MaNV { get; set; }
+        public int ID { get; set; }
+        public string Ghichu { get; set; }
+    
+        public virtual ChucNang ChucNang { get; set; }
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }

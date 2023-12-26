@@ -27,6 +27,7 @@ namespace ShopOnline.Models
     
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<CHITIETDONDATHANG> CHITIETDONDATHANGs { get; set; }
+        public virtual DbSet<ChucNang> ChucNangs { get; set; }
         public virtual DbSet<DANHMUC> DANHMUCs { get; set; }
         public virtual DbSet<DONDATHANG> DONDATHANGs { get; set; }
         public virtual DbSet<DONHANG> DONHANGs { get; set; }
@@ -40,8 +41,10 @@ namespace ShopOnline.Models
         public virtual DbSet<QUANGCAO> QUANGCAOs { get; set; }
         public virtual DbSet<QuanLyTrangLienHe> QuanLyTrangLienHes { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
+        public virtual DbSet<SIZE> SIZEs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TheLoai> TheLoais { get; set; }
         public virtual DbSet<TinTuc> TinTucs { get; set; }
+        public virtual DbSet<PhanQuyen> PhanQuyens { get; set; }
     }
 }

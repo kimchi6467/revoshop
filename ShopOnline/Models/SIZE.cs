@@ -12,24 +12,18 @@ namespace ShopOnline.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NHANVIEN
+    public partial class SIZE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NHANVIEN()
+        public SIZE()
         {
-            this.PhanQuyens = new HashSet<PhanQuyen>();
+            this.CHITIETDONDATHANGs = new HashSet<CHITIETDONDATHANG>();
         }
     
-        public int MaNV { get; set; }
-        public string HoTen { get; set; }
-        public string Taikhoan { get; set; }
-        public string Matkhau { get; set; }
-        public string Email { get; set; }
-        public string DiachiNV { get; set; }
-        public string DienthoaiNV { get; set; }
-        public Nullable<System.DateTime> Ngaysinh { get; set; }
+        public int MaSize { get; set; }
+        public string Size1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhanQuyen> PhanQuyens { get; set; }
+        public virtual ICollection<CHITIETDONDATHANG> CHITIETDONDATHANGs { get; set; }
     }
 }

@@ -14,21 +14,17 @@ namespace ShopOnline.Models
     
     public partial class CHITIETDONDATHANG
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CHITIETDONDATHANG()
-        {
-            this.DONHANGs = new HashSet<DONHANG>();
-        }
-    
         public int MaCTDH { get; set; }
-        public int MaDonHang { get; set; }
+        public Nullable<int> MaDonHang { get; set; }
+        public Nullable<int> MaDH { get; set; }
         public int MaSANPHAM { get; set; }
+        public Nullable<int> MaSize { get; set; }
         public Nullable<int> Soluong { get; set; }
         public Nullable<decimal> Dongia { get; set; }
     
         public virtual DONDATHANG DONDATHANG { get; set; }
+        public virtual DONHANG DONHANG { get; set; }
         public virtual SANPHAM SANPHAM { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DONHANG> DONHANGs { get; set; }
+        public virtual SIZE SIZE { get; set; }
     }
 }

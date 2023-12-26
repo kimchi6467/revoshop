@@ -199,7 +199,7 @@ namespace ShopOnline.Controllers
                 ctdh.MaDonHang = ddh.MaDonHang;
                 ctdh.MaSANPHAM = item.iMaSANPHAM;
                 ctdh.Soluong = item.iSoluong;
-                ctdh.Size = item.iSize;
+                
                 ctdh.Dongia = (decimal)item.dDongia;
                 db.CHITIETDONDATHANGs.Add(ctdh);
             }
