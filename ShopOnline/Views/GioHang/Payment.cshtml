@@ -11,11 +11,13 @@
             <table class="table">
                 <thead>
                     <tr>
-                        @*<td>Mã SP</td>*@
-                        <td>Tên SP</td>
-                        <td>Ảnh SP</td>
+
+                        <td>Tên Sản Phẩm</td>
+                        <td>Ảnh Sản Phẩm</td>
+                        <td>size</td>
                         <td>Số lượng</td>
                         <td>Đơn giá</td>
+                        @*<td>Xóa sản phẩm</td>*@
                         @*<td>Thành tiền</td>*@
                         <td></td>
                     </tr>
@@ -23,16 +25,17 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            @*<td>@item.iMaSANPHAM</td>*@
-                            <td>@item.sTenSANPHAM</td>
-                            <td><image src="~/Hinhsanpham/@item.sHinhAnh" width="150" /></td>
-                            <td><input type="text" class="txtSoLuong" data-id="@item.iMaSANPHAM" value="@item.iSoluong" /></td>
-                            <td>
-                                <span class="cart-price"> <span class="price">@String.Format("{0:0,0}", item.dThanhtien)</span> </span>
-                            </td>
-                            <td><a href="/GioHang/XoaGiohang?iMaSp=@item.iMaSANPHAM" data-id="@item.iMaSANPHAM" class="btn-delete">Xoá</a></td>
-                        </tr>
+                    <tr>
+                        <td>@item.sTenSANPHAM</td>
+                        <td><image src="~/Hinhsanpham/@item.sHinhAnh" width="150" /></td>
+
+                        <td>@item.iSize</td>
+                        <td><input type="text" class="txtSoLuong" data-id="@item.iMaSANPHAM" value="@item.iSoluong" /></td>
+                        <td>
+                            <span class="cart-price"> <span class="price">@String.Format("{0:0,0}", item.dThanhtien)</span> </span>
+                        </td>
+                        <td><a href="/GioHang/XoaGiohang?iMaSp=@item.iMaSANPHAM" data-id="@item.iMaSANPHAM" class="btn-delete">Xoá</a></td>
+                    </tr>
                     }
                 </tbody>
             </table>

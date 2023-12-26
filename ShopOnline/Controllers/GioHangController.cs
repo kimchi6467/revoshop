@@ -199,6 +199,7 @@ namespace ShopOnline.Controllers
                 ctdh.MaDonHang = ddh.MaDonHang;
                 ctdh.MaSANPHAM = item.iMaSANPHAM;
                 ctdh.Soluong = item.iSoluong;
+                ctdh.Size = item.iSize;
                 ctdh.Dongia = (decimal)item.dDongia;
                 db.CHITIETDONDATHANGs.Add(ctdh);
             }
@@ -281,7 +282,7 @@ namespace ShopOnline.Controllers
                 {
                     var ChiTietDonHang = new CHITIETDONDATHANG();
                     ChiTietDonHang.MaSANPHAM = item.iMaSANPHAM;
-                    //ChiTietDonHang.MaCTDH = ;
+                    //ChiTietDonHang.MaCTDH = maDH;
                     //ChiTietDonHang.Dongia = item.dDongia;
                     ChiTietDonHang.Soluong = item.iSoluong;
                     ChiTietDao.Insert(ChiTietDonHang);

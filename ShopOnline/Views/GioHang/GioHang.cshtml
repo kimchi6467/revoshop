@@ -44,9 +44,24 @@
                                             <td><image src="~/Hinhsanpham/@item.sHinhAnh" width="150" /></td>
                                             <td>@item.sTenSANPHAM</td>
 
+                                            <td>
+                                                <select class="form-control" id="StudentGender" name="StudentGender">
+                                                    
+                                                    <option>35</option>
+                                                    <option>36</option>
+                                                    <option>37</option>
+                                                    <option>38</option>
+                                                    <option>39</option>
+                                                    <option>40</option>
+                                                </select>
+                                            </td>
+                                           
+
+
+
                                             @*<td>
-                                                <input type="number" min="35" name="txtSize" value="@item.iSize" style="width: 80px; text-align:center" />
-                                            </td>*@
+            <input type="number" min="35" name="txtSize" value="@item.iSize" style="width: 80px; text-align:center" />
+        </td>*@
                                             <td><input type="number" min="1" class="txtSoLuong" data-id="@item.iMaSANPHAM" value="@item.iSoluong" style="width: 80px; text-align:center" /></td>
                                             <td>
                                                 <span class="cart-price"> <span class="price">@String.Format("{0:0,0}", item.dThanhtien)</span> </span>
