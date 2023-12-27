@@ -30,7 +30,7 @@ namespace ShopOnline.Controllers
             var hoten = collection["HoTen"];
             var tendn = collection["Taikhoan"];
             var matkhau = collection["Matkhau"];
-            var nhaplaimatkhau = collection["Nhaplaimatkhau"];
+            //var nhaplaimatkhau = collection["Nhaplaimatkhau"];
             var diachi = collection["DiachiKH"];
             var email = collection["Email"];
             var dienthoai = collection["DienthoaiKH"];
@@ -40,7 +40,7 @@ namespace ShopOnline.Controllers
             kh.HoTen = hoten;
             kh.Taikhoan = tendn;
             kh.Matkhau = matkhau;
-            kh.Matkhau = nhaplaimatkhau;
+            //kh.Matkhau = nhaplaimatkhau;
             kh.Email = email;
             kh.DiachiKH = diachi;
             kh.DienthoaiKH = dienthoai;

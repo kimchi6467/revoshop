@@ -33,17 +33,18 @@ namespace ShopOnline.Controllers
             return lstGiohang;
         }
         //Them hang vao gio
-        public ActionResult ThemGiohang(int iMaSANPHAM, string strURL)
+        public ActionResult ThemGiohang(int iMaSANPHAM, int iSoLuong, string strURL)
         {
             //Lay ra Session gio hang
             List<Giohang> lstGiohang = Laygiohang();
             //Kiem tra sách này tồn tại trong Session["Giohang"] chưa?
             Giohang sanpham = lstGiohang.Find(n => n.iMaSANPHAM == iMaSANPHAM);
-            if (sanpham == null)
+            if (sanpham == null )
             {
                 sanpham = new Giohang(iMaSANPHAM);
                 lstGiohang.Add(sanpham);
                 return Redirect(strURL);
+
             }
             else
             {
@@ -69,12 +70,14 @@ namespace ShopOnline.Controllers
         private int TongSoLuong()
         {
             int iTongSoLuong = 0;
+            
             List<Giohang> lstGiohang = Session["GioHang"] as List<Giohang>;
             if (lstGiohang != null)
             {
                 iTongSoLuong = lstGiohang.Sum(n => n.iSoluong);
+               
             }
-            return iTongSoLuong;
+            return iTongSoLuong ;
         }
         //Tinh tong tien
         private double TongTien()
@@ -199,15 +202,19 @@ namespace ShopOnline.Controllers
                 ctdh.MaDonHang = ddh.MaDonHang;
                 ctdh.MaSANPHAM = item.iMaSANPHAM;
                 ctdh.Soluong = item.iSoluong;
-                
+              
+
                 ctdh.Dongia = (decimal)item.dDongia;
                 db.CHITIETDONDATHANGs.Add(ctdh);
-            }
-          
 
-            db.SaveChanges();
+                
+            }
+  
+
+                db.SaveChanges();
             Session["Giohang"] = null;
             return RedirectToAction("Xacnhandonhang", "GioHang");
+
         }
 
         //----------Cap nhap gio hang--------------------

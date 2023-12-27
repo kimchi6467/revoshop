@@ -14,6 +14,7 @@ namespace ShopOnline.Models
         public string sTenSANPHAM { set; get; }
         public string sHinhAnh { set; get; }
         public Double dDongia { set; get; }
+        public int iSoLuongTon { set; get; }
         public int iSoluong { set; get; }
 
         public int iSIZE { set; get; }
