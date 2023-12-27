@@ -35,6 +35,7 @@
         <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_ChucNang_NHANVIEN" ManuallyRouted="false" />
         <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_NHASANXUAT" ManuallyRouted="false" />
         <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_TinTuc_TheLoai1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.UserGroup" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SHOPONLINEEntitiesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SHOPONLINEEntitiesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="UserAdmin" />
@@ -113,6 +113,7 @@
           <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
           <Property Name="Taikhoan" Type="varchar" MaxLength="50" />
           <Property Name="Matkhau" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="GroupID" Type="nvarchar" MaxLength="20" />
           <Property Name="Email" Type="varchar" MaxLength="100" />
           <Property Name="DiachiNV" Type="nvarchar" MaxLength="200" />
           <Property Name="DienthoaiNV" Type="varchar" MaxLength="50" />
@@ -223,6 +224,13 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
           <Property Name="NgayCapNhat" Type="datetime" />
           <Property Name="MaTheLoai" Type="int" />
           <Property Name="meta" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_CHITIETDONDATHANG_DONDATHANG">
           <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="0..1" />
@@ -353,6 +361,7 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TheLoai" EntityType="Self.TheLoai" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserGroup" EntityType="Self.UserGroup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [PhanQuyen].[MaNV] AS [MaNV], 
@@ -397,8 +406,7 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
             <End Role="TinTuc" EntitySet="TinTuc" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SHOPONLINEEntitiesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -523,6 +531,7 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
           <Property Name="DienthoaiNV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Ngaysinh" Type="DateTime" Precision="3" />
           <NavigationProperty Name="PhanQuyens" Relationship="Self.FK_ChucNang_NHANVIEN" FromRole="NHANVIEN" ToRole="PhanQuyen" />
+          <Property Name="GroupID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NHASANXUAT">
           <Key>
@@ -803,7 +812,15 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
             <End Role="TheLoai" EntitySet="TheLoais" />
             <End Role="TinTuc" EntitySet="TinTucs" />
           </AssociationSet>
+          <EntitySet Name="UserGroups" EntityType="SHOPONLINEEntitiesModel.UserGroup" />
         </EntityContainer>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -923,6 +940,7 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
           <EntitySetMapping Name="NHANVIENs">
             <EntityTypeMapping TypeName="SHOPONLINEEntitiesModel.NHANVIEN">
               <MappingFragment StoreEntitySet="NHANVIEN">
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
                 <ScalarProperty Name="Taikhoan" ColumnName="Taikhoan" />
@@ -1044,6 +1062,14 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Ghichu" ColumnName="Ghichu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserGroups">
+            <EntityTypeMapping TypeName="SHOPONLINEEntitiesModel.UserGroup">
+              <MappingFragment StoreEntitySet="UserGroup">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

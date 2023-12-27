@@ -119,6 +119,28 @@ namespace ShopOnline.Controllers
 
         }
 
+        //[HttpPost]
+        //public ActionResult ChangePassword(FormCollection f)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var result = await _accountRepository.ChangePasswordAsync(model);
+        //        if (result.Succeeded)
+        //        {
+        //            ViewBag.IsSuccess = true;
+        //            ModelState.Clear();
+        //            return View();
+        //        }
+
+        //        foreach (var error in result.Errors)
+        //        {
+        //            ModelState.AddModelError("", error.Description);
+        //        }
+
+        //    }
+        //    return View(model);
+        //}
+
 
 
     }

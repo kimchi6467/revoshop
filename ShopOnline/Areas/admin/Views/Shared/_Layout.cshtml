@@ -233,8 +233,14 @@
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i> 
+                        @{ 
+                            var user = (ShopOnline.Models.NHANVIEN)HttpContext.Current.Session["user"];
+                                <span>@user.HoTen</span>
+                        }
+                        <i class="fa fa-caret-down"></i>
                     </a>
+                        
                     <ul class="dropdown-menu dropdown-user">
                         <li>
                             <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -266,13 +272,26 @@
                             </div>
                             <!-- /input-group -->
                         </li>
-                       
+
 
                         <li>
                             <a href="/admin/DonDatHang/Index"><i class="fa fa-barcode fa-fw"></i> Đơn Hàng</a>
                         </li>
                         <li>
                             <a href="/admin/KhachHang/Index"><i class="fa fa-users fa-fw"></i> Khách Hàng</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> Quản Lý Nhân viên<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/admin/NhanVien/DanhSach">Danh sách</a>
+                                </li>
+                                <li>
+                                    <a href="/admin/NhanVien/ThemMoi">Thêm mới</a>
+                                </li>
+                               
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-tags fa-fw"></i> Quản Lý Sản Phẩm<span class="fa arrow"></span></a>
@@ -299,7 +318,7 @@
                                 <li>
                                     <a href="/admin/TinTuc/Index">Quản Lý Tin Tức</a>
                                 </li>
-                                
+
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -316,11 +335,11 @@
                                 <li>
                                     <a href="/admin/QuanLyTrangGioiThieu/Edit/1">Quản Lý Trang Giới Thiệu</a>
                                 </li>
-                                
+
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                       <!-- quan ly he thong-->
+                        <!-- quan ly he thong-->
                         <li>
                             <a href="#"><i class="fa fa-paste fa-fw"></i> Cài Đặt<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

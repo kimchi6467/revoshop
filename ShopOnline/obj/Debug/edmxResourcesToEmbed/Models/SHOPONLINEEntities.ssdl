@@ -108,6 +108,7 @@
     <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
     <Property Name="Taikhoan" Type="varchar" MaxLength="50" />
     <Property Name="Matkhau" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GroupID" Type="nvarchar" MaxLength="20" />
     <Property Name="Email" Type="varchar" MaxLength="100" />
     <Property Name="DiachiNV" Type="nvarchar" MaxLength="200" />
     <Property Name="DienthoaiNV" Type="varchar" MaxLength="50" />
@@ -218,6 +219,13 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
     <Property Name="NgayCapNhat" Type="datetime" />
     <Property Name="MaTheLoai" Type="int" />
     <Property Name="meta" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UserGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_CHITIETDONDATHANG_DONDATHANG">
     <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="0..1" />
@@ -348,6 +356,7 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TheLoai" EntityType="Self.TheLoai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserGroup" EntityType="Self.UserGroup" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [PhanQuyen].[MaNV] AS [MaNV], 

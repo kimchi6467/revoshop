@@ -135,10 +135,12 @@
     <Folder Include="Views\QuanLyTrang\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AdminAuthorize.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
+    <Compile Include="Areas\admin\BaoLoiController.cs" />
     <Compile Include="Areas\admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\admin\Controllers\DanhMucController.cs" />
     <Compile Include="Areas\admin\Controllers\DanhMucTinTucController.cs" />
@@ -146,6 +148,7 @@
     <Compile Include="Areas\admin\Controllers\GopYController.cs" />
     <Compile Include="Areas\admin\Controllers\KhachHangController.cs" />
     <Compile Include="Areas\admin\Controllers\MenuController.cs" />
+    <Compile Include="Areas\admin\Controllers\NhanVienController.cs" />
     <Compile Include="Areas\admin\Controllers\NhaSanXuatController.cs" />
     <Compile Include="Areas\admin\Controllers\QuanLyQuangCaoController.cs" />
     <Compile Include="Areas\admin\Controllers\QuanLyThongTinController.cs" />
@@ -154,6 +157,7 @@
     <Compile Include="Areas\admin\Controllers\SanPhamController.cs" />
     <Compile Include="Areas\admin\Controllers\TinTucController.cs" />
     <Compile Include="Common\MailHelper.cs" />
+    <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\ControlPanelController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\GioiThieuController.cs" />
@@ -240,6 +244,7 @@
     <Compile Include="Models\SIZE.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SizeGiay.cs" />
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
@@ -247,6 +252,9 @@
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TinTuc.cs">
+      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserGroup.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1506,6 +1514,11 @@
     <Content Include="Models\SHOPONLINEEntities.edmx.diagram">
       <DependentUpon>SHOPONLINEEntities.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\admin\Views\NhanVien\DanhSach.cshtml" />
+    <Content Include="Areas\admin\Views\NhanVien\ThemMoi.cshtml" />
+    <Content Include="Areas\admin\Views\NhanVien\CapNhap.cshtml" />
+    <Content Include="Areas\admin\Views\NhanVien\Xoa.cshtml" />
+    <Content Include="Areas\admin\Views\BaoLoi\KhongCoQuyen.cshtml" />
     <None Include="Properties\PublishProfiles\shop.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

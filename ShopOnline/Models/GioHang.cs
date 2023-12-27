@@ -32,7 +32,7 @@ namespace ShopOnline.Models
             sHinhAnh = sanpham.HinhAnh;
             dDongia = double.Parse(sanpham.Giaban.ToString());
             iSoluong = 1;
-            
+            iSIZE = 37;
         }
     }
 }

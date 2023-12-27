@@ -205,6 +205,7 @@ namespace ShopOnline.Controllers
                 ctdh.MaDonHang = ddh.MaDonHang;
                 ctdh.MaSANPHAM = item.iMaSANPHAM;
                 ctdh.Soluong = item.iSoluong;
+                ctdh.MaSize = item.iSIZE;
               
 
                 ctdh.Dongia = (decimal)item.dDongia;

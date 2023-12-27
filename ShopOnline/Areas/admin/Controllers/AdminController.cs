@@ -44,11 +44,11 @@ namespace ShopOnline.Areas.admin.Controllers
 
             else
             {
-                Admin ad = db.Admins.SingleOrDefault(n => n.UserAdmin == tendn && n.PassAdmin == matkhau);
+                NHANVIEN ad = db.NHANVIENs.SingleOrDefault(n => n.Taikhoan == tendn && n.Matkhau == matkhau);
                 //Gán giá trị cho đối tượng được tạo mới (ad)                  
                 if (ad != null)
                 {
-                    //Session["username"] = ad;
+                    Session["user"] = ad;
 
                     return RedirectToAction("Index", "Admin");
                 }
