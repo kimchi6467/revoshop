@@ -45,18 +45,31 @@
                                             <td>@item.sTenSANPHAM</td>
 
                                             <td>
-                                                <select class="form-control" id="StudentGender" name="StudentGender">
-                                                    
-                                                    <option>35</option>
-                                                    <option>36</option>
-                                                    <option>37</option>
-                                                    <option>38</option>
-                                                    <option>39</option>
-                                                    <option>40</option>
-                                                </select>
+                                                <div>
+
+                                                    <select class="form-control" id="size" name="size">
+                                                        <option value="35"> 35</option>
+                                                        <option value="36"> 36</option>
+                                                        <option value="37"> 37</option>
+                                                        <option value="38"> 38</option>
+                                                        <option value="39"> 39</option>
+                                                        <option value="40"> 40</option>
+
+
+
+                                                    </select>
+                                                </div>
+                                                <script>
+                                                    // Xử lý sự kiện khi size được chọn
+                                                    document.getElementById('size').addEventListener('change', function () {
+                                                        var selectedSize = this.value;
+                                                        // Gọi hàm JavaScript hoặc Ajax để xử lý các hành động cần thiết
+                                                        // Ví dụ: cập nhật giá, kiểm tra tính khả dụng, vv.
+                                                    });
+                                                </script>
                                             </td>
                                            
-
+                                           
 
 
                                             @*<td>

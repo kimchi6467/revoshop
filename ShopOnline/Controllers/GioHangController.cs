@@ -33,7 +33,7 @@ namespace ShopOnline.Controllers
             return lstGiohang;
         }
         //Them hang vao gio
-        public ActionResult ThemGiohang(int iMaSANPHAM, int iSoLuong, string strURL)
+        public ActionResult ThemGiohang(int iMaSANPHAM, string strURL)
         {
             //Lay ra Session gio hang
             List<Giohang> lstGiohang = Laygiohang();
@@ -79,6 +79,9 @@ namespace ShopOnline.Controllers
             }
             return iTongSoLuong ;
         }
+        
+        
+
         //Tinh tong tien
         private double TongTien()
         {
@@ -209,6 +212,7 @@ namespace ShopOnline.Controllers
 
                 
             }
+            
   
 
                 db.SaveChanges();
@@ -231,7 +235,7 @@ namespace ShopOnline.Controllers
             {
                 foreach (var jitem in jsonGioHang)
                 {
-                    if (lstGiohang != null)
+                    if (lstGiohang != null )
                     {
                         item.iSoluong = jitem.SoLuong;
                         
@@ -287,13 +291,14 @@ namespace ShopOnline.Controllers
                 decimal total = 0;
                 foreach (var item in lstGiohang)
                 {
-                    var ChiTietDonHang = new CHITIETDONDATHANG();
+                    var ChiTietDonHang = new CHITIETDONDATHANG();   
                     ChiTietDonHang.MaSANPHAM = item.iMaSANPHAM;
                     //ChiTietDonHang.MaCTDH = maDH;
                     //ChiTietDonHang.Dongia = item.dDongia;
                     ChiTietDonHang.Soluong = item.iSoluong;
+                    
                     ChiTietDao.Insert(ChiTietDonHang);
-
+                    
                     //total += (item.dDongia.GetValueOrDefault(0) * item.iSoluong);
                     //total = @String.Format("{0:0,0}", ViewBag.Tongtien);
 
