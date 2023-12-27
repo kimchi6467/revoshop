@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1c87d5ff92c945c6b5e39b3c15c16a91" Name="Diagram1">
+      <Diagram DiagramId="1911bf992b674c238a9df84e48ed773c" Name="Diagram1">
         <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.Admin" Width="1.5" PointX="7.75" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.CHITIETDONDATHANG" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.ChucNang" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
@@ -35,7 +35,6 @@
         <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_ChucNang_NHANVIEN" ManuallyRouted="false" />
         <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_NHASANXUAT" ManuallyRouted="false" />
         <AssociationConnector Association="SHOPONLINEEntitiesModel.FK_TinTuc_TheLoai1" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="SHOPONLINEEntitiesModel.UserGroup" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -114,7 +114,6 @@
     <EntitySetMapping Name="NHANVIENs">
       <EntityTypeMapping TypeName="SHOPONLINEEntitiesModel.NHANVIEN">
         <MappingFragment StoreEntitySet="NHANVIEN">
-          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="Taikhoan" ColumnName="Taikhoan" />
@@ -236,14 +235,6 @@
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Ghichu" ColumnName="Ghichu" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="UserGroups">
-      <EntityTypeMapping TypeName="SHOPONLINEEntitiesModel.UserGroup">
-        <MappingFragment StoreEntitySet="UserGroup">
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

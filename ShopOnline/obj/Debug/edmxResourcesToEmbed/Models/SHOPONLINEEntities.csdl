@@ -121,7 +121,6 @@
     <Property Name="DienthoaiNV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Ngaysinh" Type="DateTime" Precision="3" />
     <NavigationProperty Name="PhanQuyens" Relationship="Self.FK_ChucNang_NHANVIEN" FromRole="NHANVIEN" ToRole="PhanQuyen" />
-    <Property Name="GroupID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="NHASANXUAT">
     <Key>
@@ -402,13 +401,5 @@
       <End Role="TheLoai" EntitySet="TheLoais" />
       <End Role="TinTuc" EntitySet="TinTucs" />
     </AssociationSet>
-    <EntitySet Name="UserGroups" EntityType="SHOPONLINEEntitiesModel.UserGroup" />
   </EntityContainer>
-  <EntityType Name="UserGroup">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
 </Schema>

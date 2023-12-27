@@ -32,9 +32,9 @@
                                         <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 93px;">
                                             Mã Đơn Hàng
                                         </th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 116px;">
+                                        @*<th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 116px;">
                                             Họ Và Tên
-                                        </th>
+                                        </th>*@
                                         <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 116px;">
                                             Tình Trạng Đơn Hàng
                                         </th>
@@ -49,9 +49,9 @@
                                     {
                                         <tr class="gradeA odd" role="row">
                                             <td class="sorting_1">@item.MaDonHang</td>
-                                            <td>
+                                            @*<td>
                                                 @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen)
-                                            </td>
+                                            </td>*@
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.Tinhtranggiaohang)
                                             </td>

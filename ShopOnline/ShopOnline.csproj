@@ -157,7 +157,6 @@
     <Compile Include="Areas\admin\Controllers\SanPhamController.cs" />
     <Compile Include="Areas\admin\Controllers\TinTucController.cs" />
     <Compile Include="Common\MailHelper.cs" />
-    <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\ControlPanelController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\GioiThieuController.cs" />
@@ -244,7 +243,6 @@
     <Compile Include="Models\SIZE.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SizeGiay.cs" />
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
@@ -252,9 +250,6 @@
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TinTuc.cs">
-      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserGroup.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1507,6 +1502,11 @@
     <Content Include="Areas\admin\Views\DonDatHang\Index.cshtml" />
     <Content Include="Areas\admin\Views\QuanLyTrangLienHe\Edit.cshtml" />
     <Content Include="Areas\admin\Views\QuanLyTrangGioiThieu\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\NhanVien\DanhSach.cshtml" />
+    <Content Include="Areas\admin\Views\NhanVien\ThemMoi.cshtml" />
+    <Content Include="Areas\admin\Views\NhanVien\CapNhap.cshtml" />
+    <Content Include="Areas\admin\Views\NhanVien\Xoa.cshtml" />
+    <Content Include="Areas\admin\Views\BaoLoi\KhongCoQuyen.cshtml" />
     <EntityDeploy Include="Models\SHOPONLINEEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SHOPONLINEEntities.Designer.cs</LastGenOutput>
@@ -1514,11 +1514,7 @@
     <Content Include="Models\SHOPONLINEEntities.edmx.diagram">
       <DependentUpon>SHOPONLINEEntities.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\admin\Views\NhanVien\DanhSach.cshtml" />
-    <Content Include="Areas\admin\Views\NhanVien\ThemMoi.cshtml" />
-    <Content Include="Areas\admin\Views\NhanVien\CapNhap.cshtml" />
-    <Content Include="Areas\admin\Views\NhanVien\Xoa.cshtml" />
-    <Content Include="Areas\admin\Views\BaoLoi\KhongCoQuyen.cshtml" />
+    <Content Include="Areas\admin\Views\DonDatHang\ChiTiet.cshtml" />
     <None Include="Properties\PublishProfiles\shop.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

@@ -46,6 +46,5 @@ namespace ShopOnline.Models
         public virtual DbSet<TheLoai> TheLoais { get; set; }
         public virtual DbSet<TinTuc> TinTucs { get; set; }
         public virtual DbSet<PhanQuyen> PhanQuyens { get; set; }
-        public virtual DbSet<UserGroup> UserGroups { get; set; }
     }
 }

@@ -41,6 +41,7 @@ namespace ShopOnline.Areas.admin.Controllers
         }
 
         // GET: /admin/Menu/Create
+
         public ActionResult Create()
         {
             return View();

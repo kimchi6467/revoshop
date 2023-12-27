@@ -132,5 +132,10 @@ namespace ShopOnline.Areas.admin.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult ChiTiet()
+        {
+           
+            return View();
+        }
     }
 }

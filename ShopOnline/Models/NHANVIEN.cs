@@ -28,7 +28,6 @@ namespace ShopOnline.Models
         public string DiachiNV { get; set; }
         public string DienthoaiNV { get; set; }
         public Nullable<System.DateTime> Ngaysinh { get; set; }
-        public string GroupID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhanQuyen> PhanQuyens { get; set; }
