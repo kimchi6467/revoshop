@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Common;
 using ShopOnline.Models;
 
 namespace ShopOnline.Controllers
@@ -124,22 +126,42 @@ namespace ShopOnline.Controllers
         [HttpGet]
         public ActionResult QuenMK()
         {
+           
             return View();
         }
 
         [HttpPost]
-        public ActionResult QuenMK(FormCollection f)
+        public ActionResult QuenMK(string HoTen, string Email, string Matkhau, string Dienthoai)
+        
         {
-            string sTaiKhoan = f["txtTaiKhoan"].ToString();
-            string sMatKhau = f.Get("txtMatKhau").ToString();
-            KHACHHANG kh = db.KHACHHANGs.SingleOrDefault(n => n.Taikhoan == sTaiKhoan && n.Matkhau == sMatKhau);
-            if (kh != null)
-            {
-                ViewBag.ThongBao = "Chúc mừng bạn đăng nhập thành công !";
-                Session["TaiKhoan"] = kh;
-                return RedirectToAction("GioHang", "GioHang");
-            }
-            ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng!";
+            var khachhang = new KHACHHANG();
+
+            khachhang.HoTen = HoTen;
+            khachhang.Email = Email;
+            khachhang.Matkhau = Matkhau;
+            khachhang.DienthoaiKH = Dienthoai;
+
+
+                string content = System.IO.File.ReadAllText(Server.MapPath("~/assets/QuenMk.html"));
+
+                content = content.Replace("{{CustomerName}}", HoTen);
+               
+                content = content.Replace("{{Email}}", Email);
+
+            content = content.Replace("{{Matkhau}}", Matkhau);
+          
+
+            //content = content.Replace("{{Total}}", total.ToString("N0"));
+            var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+
+                new MailHelper().SendMail(Email, "Đơn hàng mới từ OnlineShop", content);
+                
+
+           
+            return Redirect("/Members/SuccessQuenMK");
+        }
+        public ActionResult SuccessQuenMK()
+        {
             return View();
         }
 

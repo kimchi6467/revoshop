@@ -5,8 +5,53 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<fieldset class="col2-set">
+    <div class="col-1 registered-users">
+        <div class="content">
+            @using (Html.BeginForm("QuenMK", "MemBers", FormMethod.Post))
 
-<section class="main-container col1-layout">
+            {
+
+                @Html.ValidationSummary(true)
+
+                <form>
+                    <strong>Thông tin khách hàng</strong>
+                    <p>Vui lòng nhập thông tin mua hàng</p>
+
+                    <ul class="form-list">
+                        <li>
+                            <div class="customer-name">
+                                <div class="form-group">
+                                    <label>Người nhận</label>
+                                    <input name="HoTen" class="form-control" />
+                                </div>
+                               
+                               
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input name="Email" class="form-control" />
+                                </div>
+
+                                <button type="submit" class="button">Lấy lại mật khẩu</button>
+
+
+
+                            </div>
+
+
+
+                        </li>
+
+                    </ul>
+
+
+                </form>
+            }
+        </div>
+    </div>
+</fieldset>
+
+@*<section class="main-container col1-layout">
     <div class="main container">
         <div class="account-login">
             <div class="page-title">
@@ -66,4 +111,4 @@
 
         </div>
     </div>
-</section>
+</section>*@

@@ -1328,6 +1328,7 @@
     <Content Include="Areas\admin\vendor\raphael\raphael.min.js" />
     <Content Include="assets\GioHangController.js" />
     <Content Include="assets\neworder.html" />
+    <Content Include="assets\QuenMk.html" />
     <Content Include="Content\base.scss.css" />
     <Content Include="Content\blogmate.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -1582,6 +1583,7 @@
     <Content Include="Views\Members\DoiMatKhau.cshtml" />
     <Content Include="Views\GioHang\Success.cshtml" />
     <Content Include="Views\GioHang\Payment.cshtml" />
+    <Content Include="Views\Members\SuccessQuenMK.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
