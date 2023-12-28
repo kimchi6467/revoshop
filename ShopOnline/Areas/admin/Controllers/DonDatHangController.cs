@@ -132,10 +132,16 @@ namespace ShopOnline.Areas.admin.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult ChiTiet()
+
+        // chi tiết đơn hàng
+        public ActionResult ChiTiet(int? page)
         {
-           
-            return View();
+            {
+                int pageNumber = (page ?? 1);
+                int pageSize = 10;
+                //return View(db.SACHes.ToList());
+                return View(db.DONHANGs.ToList().OrderBy(n => n.MaDH).ToPagedList(pageNumber, pageSize));
+            }
         }
     }
 }
