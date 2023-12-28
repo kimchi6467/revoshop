@@ -53,28 +53,6 @@ namespace ShopOnline.Controllers
 
 
         [HttpGet]
-        public ActionResult QuenMK()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult QuenMK(FormCollection f)
-        {
-            string sTaiKhoan = f["txtTaiKhoan"].ToString();
-            string sMatKhau = f.Get("txtMatKhau").ToString();
-            KHACHHANG kh = db.KHACHHANGs.SingleOrDefault(n => n.Taikhoan == sTaiKhoan && n.Matkhau == sMatKhau);
-            if (kh != null)
-            {
-                ViewBag.ThongBao = "Chúc mừng bạn đăng nhập thành công !";
-                Session["TaiKhoan"] = kh;
-                return RedirectToAction("GioHang", "GioHang");
-            }
-            ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng!";
-            return View();
-        }
-
-        [HttpGet]
         public ActionResult DangNhap()
         {
             return View();
@@ -142,6 +120,28 @@ namespace ShopOnline.Controllers
         //}
 
 
+
+        [HttpGet]
+        public ActionResult QuenMK()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult QuenMK(FormCollection f)
+        {
+            string sTaiKhoan = f["txtTaiKhoan"].ToString();
+            string sMatKhau = f.Get("txtMatKhau").ToString();
+            KHACHHANG kh = db.KHACHHANGs.SingleOrDefault(n => n.Taikhoan == sTaiKhoan && n.Matkhau == sMatKhau);
+            if (kh != null)
+            {
+                ViewBag.ThongBao = "Chúc mừng bạn đăng nhập thành công !";
+                Session["TaiKhoan"] = kh;
+                return RedirectToAction("GioHang", "GioHang");
+            }
+            ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng!";
+            return View();
+        }
 
     }
 }

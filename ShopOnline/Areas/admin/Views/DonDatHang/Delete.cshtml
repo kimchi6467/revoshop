@@ -30,15 +30,15 @@
                                         <label>Mã Đơn hàng</label>
                                         @Html.TextBoxFor(model => model.MaDonHang, new { disabled = "disabled", @class = "form-control" })
                                     </div>
-                                    <div class="form-group">
+                                    @*<div class="form-group">
                                         <label>Họ và Tên</label>
                                         @Html.TextBoxFor(model => model.KHACHHANG.HoTen, new { disabled = "disabled", @class = "form-control" })
-                                    </div>
+                                    </div>*@
                                     <button type="submit" class="btn btn-primary">Xóa</button>                                    
                                 </form>
                                 
                             }
-                            <button onclick="window.location.href = '/admin/DanhMucTinTuc/'" class="btn btn-primary">Hủy</button>
+                            <button onclick="window.location.href = '/admin/DonDatHang/Index'" class="btn btn-primary">Hủy</button>
                         </div>
                         <!-- /.col-lg-6 (nested) -->
                         <!-- /.col-lg-6 (nested) -->

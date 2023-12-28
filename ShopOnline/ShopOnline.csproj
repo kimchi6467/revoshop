@@ -1514,7 +1514,6 @@
     <Content Include="Models\SHOPONLINEEntities.edmx.diagram">
       <DependentUpon>SHOPONLINEEntities.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\admin\Views\DonDatHang\ChiTiet.cshtml" />
     <None Include="Properties\PublishProfiles\shop.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
