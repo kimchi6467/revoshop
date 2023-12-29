@@ -276,8 +276,39 @@ namespace ShopOnline.Controllers
             {
                 return View("UnSuccess");
             }
+            DONDATHANG ddh = new DONDATHANG();
+            KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];
+            List<Giohang> gh = Laygiohang();
+            ddh.MaKH = kh.MaKH;
+            //ddh.Ngaydat = DateTime.Now;
+            //var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["Ngaygiao"]);
+            //ddh.Ngaygiao = DateTime.Parse(ngaygiao);
+            ddh.Tinhtranggiaohang = true;
+            ddh.Dathanhtoan = true;
+            db.DONDATHANGs.Add(ddh);
+            db.SaveChanges();
+            List<Giohang> lstGiohang = Laygiohang();
+            foreach (var item in lstGiohang)
+            {
+                var ChiTietDonHang = new CHITIETDONDATHANG();
+                ChiTietDonHang.MaSANPHAM = item.iMaSANPHAM;
+                //ChiTietDonHang.MaCTDH = maDH;
+                //ChiTietDonHang.Dongia = item.dDongia;
+                ChiTietDonHang.Soluong = item.iSoluong;
+
+
+                //total += (item.dDongia.GetValueOrDefault(0) * item.iSoluong);
+                //total = @String.Format("{0:0,0}", ViewBag.Tongtien);
+
+            }
+
+
+
+            db.SaveChanges();
+            Session["Giohang"] = null;
+            return RedirectToAction("Xacnhandonhangonline", "GioHang");
             //on successful payment, show success page to user.  
-            return View("Success");
+            //return View("Success");
         }
         private PayPal.Api.Payment payment;
         private Payment ExecutePayment(APIContext apiContext, string payerId, string paymentId)
@@ -464,6 +495,10 @@ namespace ShopOnline.Controllers
         }
 
         public ActionResult Success()
+        {
+            return View();
+        }
+        public ActionResult Xacnhandonhangonline()
         {
             return View();
         }

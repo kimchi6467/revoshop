@@ -1588,6 +1588,7 @@
     <Content Include="Views\GioHang\Payment.cshtml" />
     <Content Include="Views\Members\SuccessQuenMK.cshtml" />
     <Content Include="Views\GioHang\UnSuccess.cshtml" />
+    <Content Include="Views\GioHang\Xacnhandonhangonline.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
