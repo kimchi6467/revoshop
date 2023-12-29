@@ -4,8 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Thành công</h2>
+<h2>Thông báo</h2>
+<fieldset class="col2-set">
+    <div class="col-1 registered-users">
+        <div class="alert alert-success">
+            Bạn vừa mua hàng thành công. Chúng tôi sẽ liên hệ đến bạn sớm nhất.
+        </div>
+        <div>
+            <button class="button btn-continue" title="Tiếp tục mua hàng" type="button" onclick="window.location.href = '/'"><span><span>Tiếp tục mua hàng</span></span></button>
+        </div>
+    </div>
+</fieldset>
 
-<div class="alert alert-success">
-    Bạn vừa mua hàng thành công. Chúng tôi sẽ liên hệ đến bạn sớm nhất.
-</div>

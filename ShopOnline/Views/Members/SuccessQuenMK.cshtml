@@ -4,10 +4,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Cấp lại mật khẩu</h2>
+<h2>Thông báo Cấp lại mật khẩu</h2>
 
 
-<div class="alert alert-success">
-    Mật khẩu của bạn đã được gửi đến gmail. Vui lòng kiểm tra gmail của bạn !!!!
-</div>
+<fieldset class="col2-set">
+    <div class="col-1 registered-users">
+        <div class="alert alert-success">
+            Mật khẩu của bạn đã được gửi đến gmail. Vui lòng kiểm tra gmail của bạn !!!!
+
+        </div>
+        <div>
+            <button class="button btn-continue" title="Tiếp tục mua hàng" type="button" onclick="window.location.href = '/Members/DangNhap'"><span><span>Đăng nhập để mua hàng</span></span></button>
+        </div>
+    </div>
+</fieldset>
+
 
