@@ -226,3 +226,5 @@ D:\Do An\revoshop\ShopOnline\obj\Debug\ShopOnline.csproj.CopyComplete
 D:\Do An\revoshop\ShopOnline\obj\Debug\ShopOnline.dll
 D:\Do An\revoshop\ShopOnline\obj\Debug\ShopOnline.pdb
 D:\Do An\revoshop\ShopOnline\obj\Debug\ShopOnline.csprojAssemblyReference.cache
+D:\Do An\revoshop\ShopOnline\bin\PayPal.dll
+D:\Do An\revoshop\ShopOnline\bin\PayPal.xml
