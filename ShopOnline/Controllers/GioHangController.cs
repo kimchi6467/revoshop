@@ -462,8 +462,8 @@ namespace ShopOnline.Controllers
                 {
                     var ChiTietDonHang = new CHITIETDONDATHANG();   
                     ChiTietDonHang.MaSANPHAM = item.iMaSANPHAM;
-                    //ChiTietDonHang.MaCTDH = maDH;
-                    //ChiTietDonHang.Dongia = item.dDongia;
+                    ChiTietDonHang.MaCTDH = (int)maDH;
+                    ChiTietDonHang.Dongia = (decimal?)item.dDongia;
                     ChiTietDonHang.Soluong = item.iSoluong;
                     
                     ChiTietDao.Insert(ChiTietDonHang);
