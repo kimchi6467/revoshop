@@ -87,17 +87,13 @@ namespace ShopOnline.Controllers
             Session["TaiKhoan"] = null;
             return RedirectToAction("Index", "Home");
         }
-
+        // đổi mật khẩu 
         [HttpGet]
         public ActionResult DoiMatKhau()
         {
-
-            Session["TaiKhoan"] = null;
-            {
-                return View();
-            }
-
+            return View();
         }
+
 
         //[HttpPost]
         //public ActionResult ChangePassword(FormCollection f)
