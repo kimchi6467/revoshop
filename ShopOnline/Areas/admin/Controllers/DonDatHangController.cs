@@ -143,5 +143,14 @@ namespace ShopOnline.Areas.admin.Controllers
                 return View(db.DONHANGs.ToList().OrderBy(n => n.MaDH).ToPagedList(pageNumber, pageSize));
             }
         }
+        public ActionResult ChiTietDonDatHang(int? page)
+        {
+            {
+                int pageNumber = (page ?? 1);
+                int pageSize = 10;
+                //return View(db.SACHes.ToList());
+                return View(db.CHITIETDONDATHANGs.ToList().OrderBy(n => n.MaCTDH).ToPagedList(pageNumber, pageSize));
+            }
+        }
     }
 }

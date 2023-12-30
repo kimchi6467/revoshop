@@ -21,9 +21,9 @@
           <Property Name="MaDonHang" Type="int" />
           <Property Name="MaDH" Type="int" />
           <Property Name="MaSANPHAM" Type="int" Nullable="false" />
-          <Property Name="MaSize" Type="int" />
           <Property Name="Soluong" Type="int" />
           <Property Name="Dongia" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Size" Type="int" />
         </EntityType>
         <EntityType Name="ChucNang">
           <Key>
@@ -187,13 +187,6 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
           <Property Name="MaDM" Type="int" />
           <Property Name="MaNSX" Type="int" />
         </EntityType>
-        <EntityType Name="SIZE">
-          <Key>
-            <PropertyRef Name="MaSize" />
-          </Key>
-          <Property Name="MaSize" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Size" Type="nchar" MaxLength="10" />
-        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -260,18 +253,6 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_CHITIETDONDATHANG_SIZE">
-          <End Role="SIZE" Type="Self.SIZE" Multiplicity="0..1" />
-          <End Role="CHITIETDONDATHANG" Type="Self.CHITIETDONDATHANG" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIZE">
-              <PropertyRef Name="MaSize" />
-            </Principal>
-            <Dependent Role="CHITIETDONDATHANG">
-              <PropertyRef Name="MaSize" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ChucNang_NHANVIEN">
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
           <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="*" />
@@ -293,6 +274,18 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
             </Principal>
             <Dependent Role="SANPHAM">
               <PropertyRef Name="MaDM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Khachhang">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="DONDATHANG">
+              <PropertyRef Name="MaKH" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -349,7 +342,6 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
           <EntitySet Name="QUANGCAO" EntityType="Self.QUANGCAO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuanLyTrangLienHe" EntityType="Self.QuanLyTrangLienHe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SIZE" EntityType="Self.SIZE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TheLoai" EntityType="Self.TheLoai" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
@@ -372,10 +364,6 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
             <End Role="SANPHAM" EntitySet="SANPHAM" />
             <End Role="CHITIETDONDATHANG" EntitySet="CHITIETDONDATHANG" />
           </AssociationSet>
-          <AssociationSet Name="FK_CHITIETDONDATHANG_SIZE" Association="Self.FK_CHITIETDONDATHANG_SIZE">
-            <End Role="SIZE" EntitySet="SIZE" />
-            <End Role="CHITIETDONDATHANG" EntitySet="CHITIETDONDATHANG" />
-          </AssociationSet>
           <AssociationSet Name="FK_ChucNang_NHANVIEN" Association="Self.FK_ChucNang_NHANVIEN">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="PhanQuyen" EntitySet="PhanQuyen" />
@@ -383,6 +371,10 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
           <AssociationSet Name="FK_DANHMUC" Association="Self.FK_DANHMUC">
             <End Role="DANHMUC" EntitySet="DANHMUC" />
             <End Role="SANPHAM" EntitySet="SANPHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Khachhang" Association="Self.FK_Khachhang">
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+            <End Role="DONDATHANG" EntitySet="DONDATHANG" />
           </AssociationSet>
           <AssociationSet Name="FK_NHASANXUAT" Association="Self.FK_NHASANXUAT">
             <End Role="NHASANXUAT" EntitySet="NHASANXUAT" />
@@ -418,13 +410,12 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
           <Property Name="MaDonHang" Type="Int32" />
           <Property Name="MaDH" Type="Int32" />
           <Property Name="MaSANPHAM" Type="Int32" Nullable="false" />
-          <Property Name="MaSize" Type="Int32" />
           <Property Name="Soluong" Type="Int32" />
           <Property Name="Dongia" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Size" Type="Int32" />
           <NavigationProperty Name="DONDATHANG" Relationship="Self.FK_CHITIETDONDATHANG_DONDATHANG" FromRole="CHITIETDONDATHANG" ToRole="DONDATHANG" />
           <NavigationProperty Name="DONHANG" Relationship="Self.FK_CHITIETDONDATHANG_DONHANG" FromRole="CHITIETDONDATHANG" ToRole="DONHANG" />
           <NavigationProperty Name="SANPHAM" Relationship="Self.FK_CHITIETDONDATHANG_SANPHAM" FromRole="CHITIETDONDATHANG" ToRole="SANPHAM" />
-          <NavigationProperty Name="SIZE" Relationship="Self.FK_CHITIETDONDATHANG_SIZE" FromRole="CHITIETDONDATHANG" ToRole="SIZE" />
         </EntityType>
         <EntityType Name="ChucNang">
           <Key>
@@ -455,6 +446,7 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
           <Property Name="Ngaygiao" Type="DateTime" Precision="3" />
           <Property Name="MaKH" Type="Int32" />
           <NavigationProperty Name="CHITIETDONDATHANGs" Relationship="Self.FK_CHITIETDONDATHANG_DONDATHANG" FromRole="DONDATHANG" ToRole="CHITIETDONDATHANG" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_Khachhang" FromRole="DONDATHANG" ToRole="KHACHHANG" />
         </EntityType>
         <EntityType Name="DONHANG">
           <Key>
@@ -491,6 +483,7 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
           <Property Name="DiachiKH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="DienthoaiKH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Ngaysinh" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="DONDATHANGs" Relationship="Self.FK_Khachhang" FromRole="KHACHHANG" ToRole="DONDATHANG" />
         </EntityType>
         <EntityType Name="LienHe">
           <Key>
@@ -586,14 +579,6 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
           <NavigationProperty Name="DANHMUC" Relationship="Self.FK_DANHMUC" FromRole="SANPHAM" ToRole="DANHMUC" />
           <NavigationProperty Name="NHASANXUAT" Relationship="Self.FK_NHASANXUAT" FromRole="SANPHAM" ToRole="NHASANXUAT" />
         </EntityType>
-        <EntityType Name="SIZE">
-          <Key>
-            <PropertyRef Name="MaSize" />
-          </Key>
-          <Property Name="MaSize" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Size1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="CHITIETDONDATHANGs" Relationship="Self.FK_CHITIETDONDATHANG_SIZE" FromRole="SIZE" ToRole="CHITIETDONDATHANG" />
-        </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -673,18 +658,6 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_CHITIETDONDATHANG_SIZE">
-          <End Role="SIZE" Type="Self.SIZE" Multiplicity="0..1" />
-          <End Role="CHITIETDONDATHANG" Type="Self.CHITIETDONDATHANG" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIZE">
-              <PropertyRef Name="MaSize" />
-            </Principal>
-            <Dependent Role="CHITIETDONDATHANG">
-              <PropertyRef Name="MaSize" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_PhanQuyen_ChucNang">
           <End Role="ChucNang" Type="Self.ChucNang" Multiplicity="1" />
           <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="*" />
@@ -706,6 +679,18 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
             </Principal>
             <Dependent Role="SANPHAM">
               <PropertyRef Name="MaDM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Khachhang">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="DONDATHANG">
+              <PropertyRef Name="MaKH" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -762,7 +747,6 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
           <EntitySet Name="QUANGCAOs" EntityType="Self.QUANGCAO" />
           <EntitySet Name="QuanLyTrangLienHes" EntityType="Self.QuanLyTrangLienHe" />
           <EntitySet Name="SANPHAMs" EntityType="Self.SANPHAM" />
-          <EntitySet Name="SIZEs" EntityType="Self.SIZE" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="TheLoais" EntityType="Self.TheLoai" />
           <EntitySet Name="TinTucs" EntityType="Self.TinTuc" />
@@ -779,10 +763,6 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
             <End Role="SANPHAM" EntitySet="SANPHAMs" />
             <End Role="CHITIETDONDATHANG" EntitySet="CHITIETDONDATHANGs" />
           </AssociationSet>
-          <AssociationSet Name="FK_CHITIETDONDATHANG_SIZE" Association="Self.FK_CHITIETDONDATHANG_SIZE">
-            <End Role="SIZE" EntitySet="SIZEs" />
-            <End Role="CHITIETDONDATHANG" EntitySet="CHITIETDONDATHANGs" />
-          </AssociationSet>
           <AssociationSet Name="FK_PhanQuyen_ChucNang" Association="Self.FK_PhanQuyen_ChucNang">
             <End Role="ChucNang" EntitySet="ChucNangs" />
             <End Role="PhanQuyen" EntitySet="PhanQuyens" />
@@ -790,6 +770,10 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
           <AssociationSet Name="FK_DANHMUC" Association="Self.FK_DANHMUC">
             <End Role="DANHMUC" EntitySet="DANHMUCs" />
             <End Role="SANPHAM" EntitySet="SANPHAMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Khachhang" Association="Self.FK_Khachhang">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
           </AssociationSet>
           <AssociationSet Name="FK_ChucNang_NHANVIEN" Association="Self.FK_ChucNang_NHANVIEN">
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
@@ -826,9 +810,9 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
                 <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
                 <ScalarProperty Name="MaDH" ColumnName="MaDH" />
                 <ScalarProperty Name="MaSANPHAM" ColumnName="MaSANPHAM" />
-                <ScalarProperty Name="MaSize" ColumnName="MaSize" />
                 <ScalarProperty Name="Soluong" ColumnName="Soluong" />
                 <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -994,14 +978,6 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
                 <ScalarProperty Name="Soluongton" ColumnName="Soluongton" />
                 <ScalarProperty Name="MaDM" ColumnName="MaDM" />
                 <ScalarProperty Name="MaNSX" ColumnName="MaNSX" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIZEs">
-            <EntityTypeMapping TypeName="SHOPONLINEEntitiesModel.SIZE">
-              <MappingFragment StoreEntitySet="SIZE">
-                <ScalarProperty Name="MaSize" ColumnName="MaSize" />
-                <ScalarProperty Name="Size1" ColumnName="Size" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

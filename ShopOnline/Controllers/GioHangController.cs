@@ -206,7 +206,7 @@ namespace ShopOnline.Controllers
                 ctdh.MaDonHang = ddh.MaDonHang;
                 ctdh.MaSANPHAM = item.iMaSANPHAM;
                 ctdh.Soluong = item.iSoluong;
-                ctdh.MaSize = item.iSIZE;
+                ctdh.Size = item.iSIZE;
               
 
                 ctdh.Dongia = (decimal)item.dDongia;
@@ -283,7 +283,7 @@ namespace ShopOnline.Controllers
             //ddh.Ngaydat = DateTime.Now;
             //var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["Ngaygiao"]);
             //ddh.Ngaygiao = DateTime.Parse(ngaygiao);
-            ddh.Tinhtranggiaohang = true;
+            ddh.Tinhtranggiaohang = false;
             ddh.Dathanhtoan = true;
             db.DONDATHANGs.Add(ddh);
             db.SaveChanges();

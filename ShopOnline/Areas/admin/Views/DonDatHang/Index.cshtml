@@ -32,11 +32,14 @@
                                         <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 93px;">
                                             Mã Đơn Hàng
                                         </th>
-                                        @*<th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 116px;">
+                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 116px;">
                                             Họ Và Tên
-                                        </th>*@
+                                        </th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 116px;">
                                             Tình Trạng Đơn Hàng
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 116px;">
+                                            Tình Trạng Thanh Toán
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 105px;">
                                             Tác Vụ
@@ -47,20 +50,25 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        <tr class="gradeA odd" role="row">
-                                            <td class="sorting_1">@item.MaDonHang</td>
-                                            @*<td>
-                                                @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen)
-                                            </td>*@
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Tinhtranggiaohang)
-                                            </td>
-                                            <td class="center">
-                                                @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = item.MaDonHang }) |
-                                                @Html.ActionLink("Chi Tiết", "Details", new { id = item.MaDonHang }) |
-                                                @Html.ActionLink("Xóa", "Delete", new { id = item.MaDonHang })
-                                            </td>
-                                        </tr>
+                                    <tr class="gradeA odd" role="row">
+                                        <td class="sorting_1">@item.MaDonHang</td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Tinhtranggiaohang)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Dathanhtoan)
+                                        </td>
+
+                                        <td class="center">
+                                            @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = item.MaDonHang }) |
+                                            @Html.ActionLink("Chi Tiết", "Details", new { id = item.MaDonHang }) |
+                                            @Html.ActionLink("Xóa", "Delete", new { id = item.MaDonHang })
+                                        </td>
+                                    </tr>
                                     }
                                 </tbody>
                             </table>

@@ -41,7 +41,6 @@ namespace ShopOnline.Models
         public virtual DbSet<QUANGCAO> QUANGCAOs { get; set; }
         public virtual DbSet<QuanLyTrangLienHe> QuanLyTrangLienHes { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
-        public virtual DbSet<SIZE> SIZEs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TheLoai> TheLoais { get; set; }
         public virtual DbSet<TinTuc> TinTucs { get; set; }

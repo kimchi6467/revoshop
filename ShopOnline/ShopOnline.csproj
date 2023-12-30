@@ -243,9 +243,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SHOPONLINEEntities.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\SIZE.cs">
-      <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>SHOPONLINEEntities.tt</DependentUpon>
     </Compile>
@@ -1507,10 +1504,11 @@
     <Content Include="Areas\admin\Views\QuanLyTrangLienHe\Edit.cshtml" />
     <Content Include="Areas\admin\Views\QuanLyTrangGioiThieu\Edit.cshtml" />
     <Content Include="Areas\admin\Views\NhanVien\DanhSach.cshtml" />
-    <Content Include="Areas\admin\Views\NhanVien\ThemMoi.cshtml" />
-    <Content Include="Areas\admin\Views\NhanVien\CapNhap.cshtml" />
+    <Content Include="Areas\admin\Views\NhanVien\Create.cshtml" />
+    <Content Include="Areas\admin\Views\NhanVien\Details.cshtml" />
     <Content Include="Areas\admin\Views\NhanVien\Xoa.cshtml" />
     <Content Include="Areas\admin\Views\BaoLoi\KhongCoQuyen.cshtml" />
+    <Content Include="Areas\admin\Views\DonDatHang\ChiTiet.cshtml" />
     <EntityDeploy Include="Models\SHOPONLINEEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SHOPONLINEEntities.Designer.cs</LastGenOutput>
@@ -1518,7 +1516,8 @@
     <Content Include="Models\SHOPONLINEEntities.edmx.diagram">
       <DependentUpon>SHOPONLINEEntities.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\admin\Views\DonDatHang\ChiTiet.cshtml" />
+    <Content Include="Areas\admin\Views\NhanVien\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\DonDatHang\ChiTietDonDatHang.cshtml" />
     <None Include="Properties\PublishProfiles\shop.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

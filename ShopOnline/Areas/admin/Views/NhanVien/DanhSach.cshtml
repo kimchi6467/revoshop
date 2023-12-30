@@ -22,7 +22,7 @@
                 <div class="panel-heading">
                     Danh Sách Nhân viên
                 </div>
-                <button onclick="window.location.href = '/admin/NhanVien/ThemMoi'" class="btn btn-primary">Thêm Mới</button>
+                <button onclick="window.location.href = '/admin/NhanVien/Create'" class="btn btn-primary">Thêm Mới</button>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
@@ -56,7 +56,7 @@
                                             <td class="center">
                                                 @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = item.MaNV }) |
                                                 @Html.ActionLink("Chi Tiết", "Details", new { id = item.MaNV }) |
-                                                @Html.ActionLink("Xóa", "Delete", new { id = item.MaNV })
+                                                @Html.ActionLink("Xóa", "Xoa", new { id = item.MaNV })
                                             </td>
                                         </tr>
                                     }

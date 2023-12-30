@@ -18,13 +18,12 @@ namespace ShopOnline.Models
         public Nullable<int> MaDonHang { get; set; }
         public Nullable<int> MaDH { get; set; }
         public int MaSANPHAM { get; set; }
-        public Nullable<int> MaSize { get; set; }
         public Nullable<int> Soluong { get; set; }
         public Nullable<decimal> Dongia { get; set; }
+        public Nullable<int> Size { get; set; }
     
         public virtual DONDATHANG DONDATHANG { get; set; }
         public virtual DONHANG DONHANG { get; set; }
         public virtual SANPHAM SANPHAM { get; set; }
-        public virtual SIZE SIZE { get; set; }
     }
 }

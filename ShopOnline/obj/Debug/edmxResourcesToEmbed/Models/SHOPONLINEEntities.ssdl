@@ -16,9 +16,9 @@
     <Property Name="MaDonHang" Type="int" />
     <Property Name="MaDH" Type="int" />
     <Property Name="MaSANPHAM" Type="int" Nullable="false" />
-    <Property Name="MaSize" Type="int" />
     <Property Name="Soluong" Type="int" />
     <Property Name="Dongia" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Size" Type="int" />
   </EntityType>
   <EntityType Name="ChucNang">
     <Key>
@@ -182,13 +182,6 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
     <Property Name="MaDM" Type="int" />
     <Property Name="MaNSX" Type="int" />
   </EntityType>
-  <EntityType Name="SIZE">
-    <Key>
-      <PropertyRef Name="MaSize" />
-    </Key>
-    <Property Name="MaSize" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Size" Type="nchar" MaxLength="10" />
-  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -255,18 +248,6 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_CHITIETDONDATHANG_SIZE">
-    <End Role="SIZE" Type="Self.SIZE" Multiplicity="0..1" />
-    <End Role="CHITIETDONDATHANG" Type="Self.CHITIETDONDATHANG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SIZE">
-        <PropertyRef Name="MaSize" />
-      </Principal>
-      <Dependent Role="CHITIETDONDATHANG">
-        <PropertyRef Name="MaSize" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_ChucNang_NHANVIEN">
     <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
     <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="*" />
@@ -288,6 +269,18 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
       </Principal>
       <Dependent Role="SANPHAM">
         <PropertyRef Name="MaDM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Khachhang">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="DONDATHANG">
+        <PropertyRef Name="MaKH" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -344,7 +337,6 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
     <EntitySet Name="QUANGCAO" EntityType="Self.QUANGCAO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QuanLyTrangLienHe" EntityType="Self.QuanLyTrangLienHe" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="SIZE" EntityType="Self.SIZE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TheLoai" EntityType="Self.TheLoai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
@@ -367,10 +359,6 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="CHITIETDONDATHANG" EntitySet="CHITIETDONDATHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK_CHITIETDONDATHANG_SIZE" Association="Self.FK_CHITIETDONDATHANG_SIZE">
-      <End Role="SIZE" EntitySet="SIZE" />
-      <End Role="CHITIETDONDATHANG" EntitySet="CHITIETDONDATHANG" />
-    </AssociationSet>
     <AssociationSet Name="FK_ChucNang_NHANVIEN" Association="Self.FK_ChucNang_NHANVIEN">
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
       <End Role="PhanQuyen" EntitySet="PhanQuyen" />
@@ -378,6 +366,10 @@ warning 6002: The table/view 'revoshop.dbo.PhanQuyen' does not have a primary ke
     <AssociationSet Name="FK_DANHMUC" Association="Self.FK_DANHMUC">
       <End Role="DANHMUC" EntitySet="DANHMUC" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Khachhang" Association="Self.FK_Khachhang">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="DONDATHANG" EntitySet="DONDATHANG" />
     </AssociationSet>
     <AssociationSet Name="FK_NHASANXUAT" Association="Self.FK_NHASANXUAT">
       <End Role="NHASANXUAT" EntitySet="NHASANXUAT" />

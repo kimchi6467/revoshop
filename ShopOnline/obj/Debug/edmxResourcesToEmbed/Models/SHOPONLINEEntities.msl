@@ -17,9 +17,9 @@
           <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
           <ScalarProperty Name="MaDH" ColumnName="MaDH" />
           <ScalarProperty Name="MaSANPHAM" ColumnName="MaSANPHAM" />
-          <ScalarProperty Name="MaSize" ColumnName="MaSize" />
           <ScalarProperty Name="Soluong" ColumnName="Soluong" />
           <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -185,14 +185,6 @@
           <ScalarProperty Name="Soluongton" ColumnName="Soluongton" />
           <ScalarProperty Name="MaDM" ColumnName="MaDM" />
           <ScalarProperty Name="MaNSX" ColumnName="MaNSX" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SIZEs">
-      <EntityTypeMapping TypeName="SHOPONLINEEntitiesModel.SIZE">
-        <MappingFragment StoreEntitySet="SIZE">
-          <ScalarProperty Name="MaSize" ColumnName="MaSize" />
-          <ScalarProperty Name="Size1" ColumnName="Size" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
